@@ -1,0 +1,45 @@
+.portion{
+	height:100%;
+	width:29%;
+}
+.center-portion{
+	height:100%;
+	width:40%;
+}
+
+html{
+	height: 100%;
+}
+body{
+	margin:0;
+	height:100%;
+	overflow-y: hidden;
+}
+
+
+.left {
+	float: left;
+}
+.right{
+	float: right;
+}
+
+.border-basic{
+	border: 1px solid black;
+}
+
+.segment{
+	display: block;
+	width: 100%;
+
+	height: 50%;
+}
+
+.cover-width {
+	width:100%;
+}
+
+.statement{
+	display: inline-block;
+	
+}
