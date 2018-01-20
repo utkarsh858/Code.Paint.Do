@@ -6,8 +6,13 @@
 	<script type="text/javascript" src="data_drag.js">
 		
 	</script>
+	<script type="text/javascript" src="operations.js"></script>
 </head>
 <body style="height: 100%">
+
+<!-- absolutely no need -->
+<!-- <script type="text/javascript">var onDropId="default_adder";</script> -->
+
 <div class="left portion border-basic">
 	<div class="segment border-basic ">
 		<!-- Statements -->
@@ -24,9 +29,9 @@
 
 	</div>
 </div>
-<div class="center-portion border-basic left" ondragover="allowDrop(event)" ondrop="drop(event)">
+<div id="center-portion" class="center-portion border-basic left" ondragover="allowDrop(event)" ondrop="drop(event)">
 	<!-- middle	 -->
-		<ul type="none" class="cover-width">
+		<ul type="none" class="cover-width" >
 		</ul>
 
 

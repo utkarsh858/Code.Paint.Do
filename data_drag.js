@@ -5,18 +5,47 @@ function drag(ev) {
 
 }
 
-function drop(ev) {
-
-    ev.preventDefault();
-	 ev.dataTransfer.dropEffect = "copy"
+function prepare_codestatement(ev){
+        ev.preventDefault();
+     ev.dataTransfer.dropEffect = "copy"
 
     var data = ev.dataTransfer.getData("text");
     var dragged_element=document.getElementById(data).cloneNode(true);
+    
     dragged_element.id+="popat";
+    
+    var onclick_attr=document.createAttribute("onclick");
+    onclick_attr.value="erase(event)";
+    dragged_element.setAttributeNode(onclick_attr);
+
+    var ondragover_attr=document.createAttribute("ondragover");
+    ondragover_attr.value="allowDrop(event)";
+    dragged_element.setAttributeNode(ondragover_attr);
+
+
+    var ondrop_attr=document.createAttribute("ondrop");
+    ondrop_attr.value="drop_for_statements(event)";
+    dragged_element.setAttributeNode(ondrop_attr);
+
+
+    dragged_element.setAttribute("class","code_statements");
+    return dragged_element;
+}
+
+function drop(ev) {
+
+    var dragged_element=prepare_codestatement(ev);
     ev.target.appendChild(dragged_element);
+}
+
+function drop_for_statements(ev){
+    ev.stopPropagation();
+    var dragged_element=prepare_codestatement(ev);
+    ev.target.parentNode.insertBefore(dragged_element,ev.target.nextSibling);
 }
 
 function allowDrop(ev){
 	 ev.dataTransfer.dropEffect = "copy"
 	event.preventDefault();
 }
+

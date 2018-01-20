@@ -47,3 +47,8 @@ body{
 ul {
 	height:100%;
 }
+
+.code_statements{
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
