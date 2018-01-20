@@ -12,9 +12,9 @@
 	<div class="segment border-basic ">
 		<!-- Statements -->
 		<ul type="none" class="cover-width">
-			<li draggable=true class="statements" id="123" ondragstart="drag(event)">Declare a variable</li>
-			<li draggable=true class="statements" >Print</li>
-			<li draggable=true class="statements">Input</li>
+			<li draggable=true class="statements" id="s1" >Declare a variable</li>
+			<li draggable=true class="statements" id="s2">Print</li>
+			<li draggable=true class="statements" id="s3">Input</li>
 		</ul>
 
 
@@ -40,11 +40,18 @@ haha
 
 
 </div>
-<!-- <script type="text/javascript">
-	var ids=window.getElementByTagName('li');
-	for (var i = ids.length - 1; i >= 0; i) {
-		ids[i].ondragstart="drag(event)";
+<script type="text/javascript">
+	var ids=document.getElementsByTagName('li');
+	console.log(ids);
+	for (var i = ids.length - 1; i >= 0; i--) {
+		if(ids[i].getAttribute("class")=="statements")
+		{
+			var attr=document.createAttribute("ondragstart");
+			attr.value="drag(event)";
+			ids[i].setAttributeNode(attr);
+		}
+
 	}
-</script> -->
+</script>
 </body>
 </html>

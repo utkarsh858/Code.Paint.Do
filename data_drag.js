@@ -1,7 +1,7 @@
 function drag(ev) {
     ev.dataTransfer.dropEffect="copy";
 
-    ev.dataTransfer.setData("text", ev.target.id);
+    ev.dataTransfer.setData("text/plain", ev.target.id);
 
 }
 
@@ -12,7 +12,7 @@ function drop(ev) {
 
     var data = ev.dataTransfer.getData("text");
     var dragged_element=document.getElementById(data).cloneNode(true);
-    dragged_element.id=ev.target.id+"2";
+    dragged_element.id+="popat";
     ev.target.appendChild(dragged_element);
 }
 
