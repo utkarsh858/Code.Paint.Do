@@ -41,5 +41,9 @@ body{
 
 .statement{
 	display: inline-block;
-	
+
+}
+
+ul {
+	height:100%;
 }

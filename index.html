@@ -12,7 +12,7 @@
 	<div class="segment border-basic ">
 		<!-- Statements -->
 		<ul type="none" class="cover-width">
-			<li draggable=true class="statements">Declare a variable</li>
+			<li draggable=true class="statements" id="123" ondragstart="drag(event)">Declare a variable</li>
 			<li draggable=true class="statements" >Print</li>
 			<li draggable=true class="statements">Input</li>
 		</ul>
@@ -22,11 +22,12 @@
 	<div class="segment border-basic ">
 		<!-- Regions -->
 
-
 	</div>
 </div>
-<div class="center-portion border-basic left">
+<div class="center-portion border-basic left" ondragover="allowDrop(event)" ondrop="drop(event)">
 	<!-- middle	 -->
+		<ul type="none" class="cover-width">
+		</ul>
 
 
 
@@ -39,5 +40,11 @@ haha
 
 
 </div>
+<!-- <script type="text/javascript">
+	var ids=window.getElementByTagName('li');
+	for (var i = ids.length - 1; i >= 0; i) {
+		ids[i].ondragstart="drag(event)";
+	}
+</script> -->
 </body>
 </html>
