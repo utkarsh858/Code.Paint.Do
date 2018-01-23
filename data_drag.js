@@ -6,16 +6,19 @@ function drag(ev) {
 }
 
 function prepare_codestatement(ev){
-        ev.preventDefault();
-     ev.dataTransfer.dropEffect = "copy"
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "copy"
 
     var data = ev.dataTransfer.getData("text");
     var dragged_element=document.getElementById(data).cloneNode(true);
     
-    dragged_element.id+="popat";
+    dragged_element.id="c"+get_id();
     
+    
+    if(dragged_element.getAttribute("class").search("statements")!=-1){
+
     var onclick_attr=document.createAttribute("onclick");
-    onclick_attr.value="erase(event)";
+    onclick_attr.value="select(event)";
     dragged_element.setAttributeNode(onclick_attr);
 
     var ondragover_attr=document.createAttribute("ondragover");
@@ -28,7 +31,20 @@ function prepare_codestatement(ev){
     dragged_element.setAttributeNode(ondrop_attr);
 
 
-    dragged_element.setAttribute("class","code_statements");
+
+
+    dragged_element.setAttribute("class",dragged_element.getAttribute("class").replace("statements","code-statements"));
+    }
+    else {
+    dragged_element.setAttribute("class",dragged_element.getAttribute("class").replace("region","code-region"));
+
+
+    var onclick_attr=document.createAttribute("onclick");
+    onclick_attr.value="select(event)";
+    dragged_element.setAttributeNode(onclick_attr);
+
+    }
+
     return dragged_element;
 }
 
@@ -49,3 +65,7 @@ function allowDrop(ev){
 	event.preventDefault();
 }
 
+function drop_for_regionHeading(ev){
+    ev.stopPropagation();
+
+}
