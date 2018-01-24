@@ -1,5 +1,13 @@
 var global_id=0;
 
+var statements_info;
+read_file("statements_info.json",statements_info);
+
+Object.prototype[Symbol.iterator] = function*() {
+ for(let key of Object.keys(this)) {
+  yield([ key, this[key] ])
+} }
+
 function erase(ev) {
 	ev.target.remove();	
 }
@@ -7,6 +15,48 @@ function erase(ev) {
 function get_id(){
 	return global_id++;
 }
+
+
+function code_statements_handler(classType,format){
+
+	var element=document.createElement("div");
+	var attr=document.createAttribute("data-type");
+	attr.value=format;
+	element.setAttributeNode(attr);
+	
+	for(let [ key,value ] of statements_info[format]){
+		var sub_element=document.createElement("input");
+		var attr2=document.createAttribute("type");
+		attr2.value=value;
+		sub_element.setAttributeNode(attr2);
+
+		var attr3=document.createAttribute("id");
+		attr3.value=key;
+		sub_element.setAttributeNode(attr3);
+
+		element.appendChild(sub_element);
+	}
+
+	var portion_right=document.getElementById("portion-right");
+	portion_right.appendChild(element);
+}
+
+function code_region_handler(classType){
+
+}
+
+function unload(){
+
+}
+
+function load(classType,format){
+	if(classType.search("code-statements")!=-1)
+		code_statements_handler(classType,format);
+	if(classType.search("code-region")!=-1)
+		code_region_handler(classType,format);
+
+}
+
 
 function select(ev){
     ev.stopPropagation();
@@ -23,12 +73,13 @@ function select(ev){
 
 	if(element.getAttribute("class").search("selected")==-1)
 		{element.setAttribute("class",string+" selected");
-		element.style.background="blue";}
+		element.style.background="blue";
+		load(element.getAttribute("class"),element.getAttribute("data-format"));
+	}
 	else{
 		element.setAttribute("class",string.replace(" selected",""));
 		element.style.background="pink";
+		unload();
 	}
 
 	}
-
-

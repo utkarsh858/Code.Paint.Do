@@ -3,6 +3,8 @@
 <head>
 	<title>MyCodePainter</title>
 	<link rel="stylesheet" type="text/css" href="basic.css">
+
+	<script type="text/javascript" src="file_reader.js"></script>
 	<script type="text/javascript" src="operations.js"></script>
 	<script type="text/javascript" src="data_drag.js">
 		
@@ -17,9 +19,9 @@
 	<div class="segment border-basic ">
 		<!-- Statements -->
 		<ul type="none" class="cover-width cover-height">
-			<li draggable=true class="statements" id="s1" >Declare a variable</li>
-			<li draggable=true class="statements" id="s2">Print</li>
-			<li draggable=true class="statements" id="s3">Input</li>
+			<li draggable=true class="statements" id="s1" data-format="declare" >Declare a variable</li>
+			<li draggable=true class="statements" id="s2" data-format="print">Print</li>
+			<li draggable=true class="statements" id="s3" data-format="input">Input</li>
 		</ul>
 
 
@@ -46,7 +48,7 @@
 </div>
 
 
-<div class="left portion border-basic">
+<div class="left portion border-basic" id="portion-right">
 <!-- right -->
 haha
 
