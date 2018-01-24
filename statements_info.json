@@ -1,7 +1,7 @@
 {
 	"declare":{
 		"variable-name":"text",
-		"value":"text"
+		"variable-value":"text"
 	},
 	"print":{
 

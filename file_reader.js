@@ -6,8 +6,9 @@ function read_file(file,string){
 	  if (err) {
 	    return console.error(err);
 	  }
-	  // console.log("Asynchronous read: " + data.toString());
-	string=JSON.parse(data.toString());
+	  console.log("Asynchronous read: " + data.toString());
+	string[0]=JSON.parse(data.toString());
+	// return data.toString();
 	});
 
 

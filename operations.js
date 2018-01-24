@@ -1,7 +1,8 @@
 var global_id=0;
 
-var statements_info;
+var statements_info=[];
 read_file("statements_info.json",statements_info);
+
 
 Object.prototype[Symbol.iterator] = function*() {
  for(let key of Object.keys(this)) {
@@ -23,21 +24,25 @@ function code_statements_handler(classType,format){
 	var attr=document.createAttribute("data-type");
 	attr.value=format;
 	element.setAttributeNode(attr);
-	
-	for(let [ key,value ] of statements_info[format]){
+	console.log(element);
+	for(let [ key,value ] of statements_info[0][format]){
+	console.log(key+" "+value);
+
 		var sub_element=document.createElement("input");
 		var attr2=document.createAttribute("type");
 		attr2.value=value;
 		sub_element.setAttributeNode(attr2);
 
-		var attr3=document.createAttribute("id");
+		var attr3=document.createAttribute("class");
 		attr3.value=key;
 		sub_element.setAttributeNode(attr3);
+	console.log(sub_element);
 
 		element.appendChild(sub_element);
 	}
-
+	console.log(element);
 	var portion_right=document.getElementById("portion-right");
+
 	portion_right.appendChild(element);
 }
 
@@ -46,7 +51,10 @@ function code_region_handler(classType){
 }
 
 function unload(){
+	var portion_right=document.getElementById("portion-right");
 
+	var array=portion_right.getElementsByTagName("div");
+	array[array.length-1].remove();
 }
 
 function load(classType,format){
