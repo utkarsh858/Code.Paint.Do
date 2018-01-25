@@ -115,6 +115,7 @@ function unload(id){
 	var array_inputs=del_element.getElementsByTagName("input");
 	var main_element=document.getElementById(id);
 
+	console.log(array_inputs);
 	for (var i = 0; i<=array_inputs.length - 1; i++) {
 		var sub_element=document.createElement("h6");
 		var attr=document.createAttribute("class");
@@ -127,21 +128,24 @@ function unload(id){
 		sub_element.setAttributeNode(attr2);
 
 		sub_element.innerHTML=attr.value+" : "+attr2.value;
-
+		console.log(sub_element);
 		//mechanism to attach the property to h5 
-		// main_element.appendChild();
 		var temp= main_element.getElementsByTagName("h5");
-
+		console.log(temp.length);
+		console.log(main_element);
 		var check=false;
 		var the_element_to_be_changed;
-		for (var i = temp.length - 1; i >= 0 && !check; i--) {
+
+		for (var i = 0; i <= temp.length - 1 && !check; i++) {
 			if(temp[i].class=attr.value) {check=true;the_element_to_be_changed=temp[i];}
 		}
+		console.log(check);
 		delete temp;
 
 		if(check){
 			the_element_to_be_changed.setAttribute("data-value")=attr2.value;
 		}else{
+			if(attr2.value!="")
 			main_element.appendChild(sub_element);
 		}
 
