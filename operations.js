@@ -111,6 +111,43 @@ function unload(id){
 	var portion_right=document.getElementById("portion-right");
 
 	var del_element=document.getElementById(id+" yo!");
+	
+	var array_inputs=del_element.getElementsByTagName("input");
+	var main_element=document.getElementById(id);
+
+	for (var i = 0; i<=array_inputs.length - 1; i++) {
+		var sub_element=document.createElement("h6");
+		var attr=document.createAttribute("class");
+		attr.value=array_inputs[i].getAttribute("class");
+		
+		var attr2=document.createAttribute("data-value");
+		attr2.value=array_inputs[i].value;
+
+		sub_element.setAttributeNode(attr);
+		sub_element.setAttributeNode(attr2);
+
+		sub_element.innerHTML=attr.value+" : "+attr2.value;
+
+		//mechanism to attach the property to h5 
+		// main_element.appendChild();
+		var temp= main_element.getElementsByTagName("h5");
+
+		var check=false;
+		var the_element_to_be_changed;
+		for (var i = temp.length - 1; i >= 0 && !check; i--) {
+			if(temp[i].class=attr.value) {check=true;the_element_to_be_changed=temp[i];}
+		}
+		delete temp;
+
+		if(check){
+			the_element_to_be_changed.setAttribute("data-value")=attr2.value;
+		}else{
+			main_element.appendChild(sub_element);
+		}
+
+
+	}
+
 	del_element.remove();
 }
 
@@ -143,7 +180,8 @@ function select(ev){
 	}
 	else{
 		element.setAttribute("class",string.replace(" selected",""));
-		element.style.background="pink";
+		if(element.getAttribute("class").search("code-statements")) element.style.background="";
+		if(element.getAttribute("class").search("code-regions")) element.style.background="pink";
 		unload(element.getAttribute("id"));
 	}
 
