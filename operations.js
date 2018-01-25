@@ -1,7 +1,9 @@
 var global_id=0;
 
 var statements_info=[];
+var regions_info=[];
 read_file("statements_info.json",statements_info);
+read_file("regions_info.json",regions_info);
 
 
 Object.prototype[Symbol.iterator] = function*() {
@@ -52,6 +54,10 @@ function code_statements_handler(classType,format,id){
 		element.appendChild(sub_element);
 
 	}
+
+	var marking_line=document.createElement("hr");
+	element.appendChild(marking_line);
+
 	var portion_right=document.getElementById("portion-right");
 	console.log(element);
 	portion_right.appendChild(element);
@@ -59,7 +65,46 @@ function code_statements_handler(classType,format,id){
 }
 
 function code_region_handler(classType){
+		var element=document.createElement("div");
+	var attr=document.createAttribute("data-type");
+	attr.value=format;
+	element.setAttributeNode(attr);
 
+	var attr4=document.createAttribute("id");
+	attr4.value=id+" yo!";
+	element.setAttributeNode(attr4);
+	
+	for(let [ key,value ] of statements_info[0][format]){
+		console.log(key+" "+value);
+		if(key=="display"){
+			var sub_element=document.createElement("div");
+			sub_element.innerHTML=value;
+
+		}
+
+		if(key=="input"){
+		var sub_element=document.createElement("input");
+		var attr2=document.createAttribute("type");
+		attr2.value=value[1];
+		sub_element.setAttributeNode(attr2);
+
+		var attr3=document.createAttribute("class");
+		attr3.value=value[0];
+		sub_element.setAttributeNode(attr3);
+		}
+
+
+		element.appendChild(sub_element);
+
+	}
+
+	var marking_line=document.createElement("hr");
+	element.appendChild(marking_line);
+
+	var portion_right=document.getElementById("portion-right");
+	console.log(element);
+	portion_right.appendChild(element);
+	
 }
 
 function unload(id){
