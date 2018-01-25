@@ -1,7 +1,11 @@
 {
 	"declare":{
-		"variable-name":"text",
-		"variable-value":"text"
+		"display":"The variable name is ",
+		"input":["variable-name","text"],
+		"display":"The type of variable is ",
+		"input":["variable-type","text"],
+		"display":"The type of variable cddcdc is ",
+		"input":["variable-type","text"]
 	},
 	"print":{
 

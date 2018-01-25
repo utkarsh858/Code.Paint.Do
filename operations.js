@@ -18,50 +18,62 @@ function get_id(){
 }
 
 
-function code_statements_handler(classType,format){
+function code_statements_handler(classType,format,id){
 
 	var element=document.createElement("div");
 	var attr=document.createAttribute("data-type");
 	attr.value=format;
 	element.setAttributeNode(attr);
-	console.log(element);
-	for(let [ key,value ] of statements_info[0][format]){
-	console.log(key+" "+value);
 
+	var attr4=document.createAttribute("id");
+	attr4.value=id+" yo!";
+	element.setAttributeNode(attr4);
+	
+	for(let [ key,value ] of statements_info[0][format]){
+		console.log(key+" "+value);
+		if(key=="display"){
+			var sub_element=document.createElement("div");
+			sub_element.innerHTML=value;
+
+		}
+
+		if(key=="input"){
 		var sub_element=document.createElement("input");
 		var attr2=document.createAttribute("type");
-		attr2.value=value;
+		attr2.value=value[1];
 		sub_element.setAttributeNode(attr2);
 
 		var attr3=document.createAttribute("class");
-		attr3.value=key;
+		attr3.value=value[0];
 		sub_element.setAttributeNode(attr3);
-	console.log(sub_element);
+		}
+
 
 		element.appendChild(sub_element);
-	}
-	console.log(element);
-	var portion_right=document.getElementById("portion-right");
 
+	}
+	var portion_right=document.getElementById("portion-right");
+	console.log(element);
 	portion_right.appendChild(element);
+	
 }
 
 function code_region_handler(classType){
 
 }
 
-function unload(){
+function unload(id){
 	var portion_right=document.getElementById("portion-right");
 
-	var array=portion_right.getElementsByTagName("div");
-	array[array.length-1].remove();
+	var del_element=document.getElementById(id+" yo!");
+	del_element.remove();
 }
 
-function load(classType,format){
+function load(classType,format,id){
 	if(classType.search("code-statements")!=-1)
-		code_statements_handler(classType,format);
+		code_statements_handler(classType,format,id);
 	if(classType.search("code-region")!=-1)
-		code_region_handler(classType,format);
+		code_region_handler(classType,format,id);
 
 }
 
@@ -82,12 +94,12 @@ function select(ev){
 	if(element.getAttribute("class").search("selected")==-1)
 		{element.setAttribute("class",string+" selected");
 		element.style.background="blue";
-		load(element.getAttribute("class"),element.getAttribute("data-format"));
+		load(element.getAttribute("class"),element.getAttribute("data-format"),element.getAttribute("id"));
 	}
 	else{
 		element.setAttribute("class",string.replace(" selected",""));
 		element.style.background="pink";
-		unload();
+		unload(element.getAttribute("id"));
 	}
 
 	}
