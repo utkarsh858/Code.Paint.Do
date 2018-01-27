@@ -13,3 +13,7 @@ function read_file(file,string){
 
 
 }
+
+function write_file(file,string){
+	fs.appendFileSync(file,string);
+}

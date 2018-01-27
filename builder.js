@@ -2,8 +2,14 @@ var output_format=[];
 
 function recursive_build(node){
 	var opening_string= output_format[0][node.getAttribute("data-format")]["open"]["string"];
-	
-	vprintf(opening_string,);
+	var array_args=[];
+	var sub_details_element=node.getElementsByTagName('h6');
+	for (var i = 0; i < sub_details_element.length; i++) {
+		array_args.push(sub_details_element[i].getAttribute('data-value'));
+	}
+	write_file(vprintf(opening_string,array_args));
+
+
 
 	var children=node.childNodes;
 
@@ -16,8 +22,10 @@ function recursive_build(node){
 		}
 	}
 
-	var closing_string= output_format[0][node.getAttribute("data-format")]["close"]["string"];
 
+
+	var closing_string= output_format[0][node.getAttribute("data-format")]["close"]["string"];
+	write_file(vprinf(closing_string));
 }
 
 
@@ -40,7 +48,7 @@ function build() {
 				array_args.push(sub_children[j].getAttribute("data-value"));
 			}
 
-			w- vprintf(string,array_args);
+			write_file(vprintf(string,array_args));
 		}
 	}
 }
