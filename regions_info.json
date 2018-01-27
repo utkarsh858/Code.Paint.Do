@@ -1,1 +1,38 @@
-{}
+{
+	"function":{
+		"display":"Function name",
+		"input":["function-name","text"],
+		"display":"Return type",
+		"input":["return-type","text"],
+		"display":"Number of arguments",
+		"input":["num-arguments"]
+
+	},
+	"class":{
+		"display":"Class name",
+		"input":["class-name","text"]
+	},
+	"for":{
+		"display":"Iterator name",
+		"input":["variable-name","text"]
+
+	},
+	"main":{
+		"display":"Number of arguments",
+		"input":["num-arguments","text"]
+
+	},
+	"if":{
+		"display":"Condition",
+		"input":["expression","text"]
+	},
+	"else":{},
+	"switch":{
+		"display":"Variable name is",
+		"input":["variable-name","text"]
+	},
+	"case":{
+		"display":"Variable value",
+		"input":["variable-value","text"]
+	}
+}

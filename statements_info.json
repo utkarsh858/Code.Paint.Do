@@ -5,10 +5,43 @@
 		"display":"The type of variable is ",
 		"input":["variable-type","text"]
 	},
+	"expression":{
+		"display":"Variable name is",
+		"input":["variable-name","text"],
+		"display":"Variable value is",
+		"input":["variable-value","text"]
+	},
 	"print":{
-
+		"display":"What should I print?",
+		"input":["print_value","text"]
 	},
 	"input":{
-
+		"display":"Variable name is",
+		"input":["variable-name","text"]
+	},
+	"include":{
+		"display":"Package/File name",
+		"input":["package-name","text"]
+	},
+	"null":{},
+	"continue":{},
+	"break":{},
+	"memcpy":{},
+	"return":{
+		"display":"Return this",
+		"input":["variable-name","text"]
+	},
+	"memcpy":{},
+	"private :":{},
+	"public :":{},
+	"Field :":{},
+	".":{},
+	"Argument":{
+		"display":"Argument type",
+		"input":["variable-type","text"],
+		"display":"Argument name",
+		"input":["variable-name","text"],
+		"display":"Default value",
+		"input":["variable-value","text"]
 	}
 }
