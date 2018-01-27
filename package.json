@@ -1,5 +1,8 @@
 {
-	"name" : "MyCodePainter",
-	"version" : "0.1.0",
-	"main" : "main.js"
+	"name": "MyCodePainter",
+	"version": "0.1.0",
+	"main": "main.js",
+	"dependencies": {
+		"sprintf-js": "^1.1.1"
+	}
 }

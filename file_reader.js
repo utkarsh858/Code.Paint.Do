@@ -1,5 +1,5 @@
 const fs=require('fs');
-
+const vsprintf=require('sprintf-js').vsprintf;
 // Asynchronous read
 function read_file(file,string){
 	fs.readFile(file, function (err, data) {

@@ -64,7 +64,7 @@ function code_statements_handler(classType,format,id){
 	
 }
 
-function code_region_handler(classType){
+function code_region_handler(classType,format,id){
 		var element=document.createElement("div");
 	var attr=document.createAttribute("data-type");
 	attr.value=format;
@@ -190,3 +190,4 @@ function select(ev){
 	}
 
 	}
+

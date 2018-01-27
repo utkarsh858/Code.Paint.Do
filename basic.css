@@ -9,7 +9,9 @@
 	/*overflow-x: */
 }
 
-
+.relative{
+	position: relative;
+}
 
 html{
 	height: 100%;
@@ -85,3 +87,11 @@ ul {
     user-select: none;
 }
 
+.toolbar {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	background-color:#0000FF; 
+	height:20px;
+	width:100%;
+}
