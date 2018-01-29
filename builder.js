@@ -1,6 +1,7 @@
 var output_format=[];
 
 function recursive_build(node){
+
 	var opening_string= output_format[0][node.getAttribute("data-format")]["open"]["string"];
 	var array_args=[];
 	var sub_details_element=node.getElementsByTagName('h6');
@@ -30,25 +31,31 @@ function recursive_build(node){
 
 
 function build() {
-	var center_portion=document.getElementById('center-portion');
-	read_file("build-file.json",output_format);
 
-	var children=center_portion.childNodes;
+	var center_container=document.getElementById('container');
+	read_file_Sync("build-file.json",output_format,false,true);
+
+	var children=center_container.childNodes;
+	console.log(children);
 
 	for (var i = 0;i<=children.length - 1; i++) {
-		if(children[i].getAttribute("class").search("code-statements")!=-1){
-			recursive_build(children[i]);
-		}
-		if(children[i].getAttribute("class").search("code-region")!=-1){
-			var string=output_format[0][node.getAttribute("data-format")]["string"];
-			var array_args=[];
-			//building the array  of args
-			var sub_children=children.childNodes;
-			for (var j = 0; j < sub_children.length; j++) {
-				array_args.push(sub_children[j].getAttribute("data-value"));
+		if(children[i].nodeType==1){
+			console.log("children ::"+children[i]);
+	
+				if(children[i].getAttribute("class").search("code-region")!=-1){
+					recursive_build(children[i]);
+				}
+				if(children[i].getAttribute("class").search("code-statements")!=-1){
+					var string=output_format[0][children[i].getAttribute("data-format")]["string"];
+					var array_args=[];
+					//building the array  of args
+					var sub_children=children.childNodes;
+					for (var j = 0; j < sub_children.length; j++) {
+						array_args.push(sub_children[j].getAttribute("data-value"));
+					}
+	
+					write_file(vprintf(string,array_args));
 			}
-
-			write_file(vprintf(string,array_args));
 		}
 	}
 }

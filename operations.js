@@ -2,8 +2,8 @@ var global_id=0;
 
 var statements_info=[];
 var regions_info=[];
-read_file("statements_info.json",statements_info);
-read_file("regions_info.json",regions_info);
+read_file("statements_info.json",statements_info,true,false);
+read_file("regions_info.json",regions_info,true,false);
 
 
 Object.prototype[Symbol.iterator] = function*() {

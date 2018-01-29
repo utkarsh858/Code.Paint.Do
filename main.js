@@ -4,7 +4,7 @@ url =require('url')
 
 let win 
 function createWindow(){
-	win = new BrowserWindow({width:800,height : 600})
+	win = new BrowserWindow({width:1200,height : 900})
 
 	win.loadURL(url.format({
 		pathname: path.join(__dirname,'index.html'),
@@ -13,7 +13,7 @@ function createWindow(){
 
 	}))
 
-	// win.webContents.openDevTools()
+	win.webContents.openDevTools()
 
 	win.on('closed',() => {
 		win = null

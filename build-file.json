@@ -2,5 +2,47 @@
 	"declare":{
 		"string":"%2$s %1$s ;"
 	},
-	"input":{}
+	"input":{
+		"string":"std::cin >> %1$s;"
+	},
+	"expression":{
+		"string":"%1$s = %2$s ;"
+	},
+	"print":{
+		"string":"std::cout << %1$s ;"
+	},
+	"include":{
+		"string":"#include <%1$s>;"
+	},
+	"null":{
+		"string":"if(10<20);"
+	},
+	"continue":{
+		"string":"continue;"
+	},
+	"break":{
+		"string":"break;"
+	},
+	"memset":{
+		"string":"memset(,,,);"
+	},
+	"memcpy":{
+		"string":"memcpy(,,,);"
+	},
+	"private":{
+		"string":"private :"
+	},
+	"public":{
+		"string":"public :"
+	},
+	"field":{
+		"string":"%1$s\\"
+	},
+	".":{
+		"string":"."
+	},
+	";":{
+		"string":";"
+	}
+
 }
