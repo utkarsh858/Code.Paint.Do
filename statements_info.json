@@ -2,14 +2,14 @@
 	"declare":{
 		"display":"The variable name is ",
 		"input":["variable-name","text"],
-		"display":"The type of variable is ",
-		"input":["variable-type","text"]
+		"display1":"The type of variable is ",
+		"input1":["variable-type","text"]
 	},
 	"expression":{
 		"display":"Variable name is",
 		"input":["variable-name","text"],
-		"display":"Variable value is",
-		"input":["variable-value","text"]
+		"display1":"Variable value is",
+		"input1":["variable-value","text"]
 	},
 	"print":{
 		"display":"What should I print?",
