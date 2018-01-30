@@ -1,1 +1,2 @@
-undefined undefined ;undefined undefined ;undefined undefined ;memset(,,,);undefined undefined ;
+#include <stdio.h>;
+lal() popat ;

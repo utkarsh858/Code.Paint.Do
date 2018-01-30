@@ -1,42 +1,42 @@
 {
 	"declare":{
-		"string":"%2$s %1$s ;"
+		"string":"%1$s %2$s ;\n"
 	},
 	"input":{
-		"string":"std::cin >> %1$s;"
+		"string":"std::cin >> %1$s;\n"
 	},
 	"expression":{
-		"string":"%1$s = %2$s ;"
+		"string":"%1$s = %2$s ;\n"
 	},
 	"print":{
-		"string":"std::cout << %1$s ;"
+		"string":"std::cout << %1$s ;\n"
 	},
 	"include":{
-		"string":"#include <%1$s>;"
+		"string":"#include <%1$s>;\n"
 	},
 	"null":{
-		"string":"if(10<20);"
+		"string":"if(10<20);\n"
 	},
 	"continue":{
-		"string":"continue;"
+		"string":"continue;\n"
 	},
 	"break":{
-		"string":"break;"
+		"string":"break;\n"
 	},
 	"memset":{
-		"string":"memset(,,,);"
+		"string":"memset(,,,);\n"
 	},
 	"memcpy":{
-		"string":"memcpy(,,,);"
+		"string":"memcpy(,,,);\n"
 	},
 	"private":{
-		"string":"private :"
+		"string":"private :\n"
 	},
 	"public":{
-		"string":"public :"
+		"string":"public :\n"
 	},
 	"field":{
-		"string":"%1$s\\"
+		"string":"%1$s"
 	},
 	".":{
 		"string":"."
