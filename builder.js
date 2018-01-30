@@ -1,5 +1,5 @@
 var output_format=[];
-read_file("build-file.json",output_format,true,true);
+read_file("build-file.json",output_format,true,false);
 
 function recursive_build(node){
 

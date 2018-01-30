@@ -43,13 +43,13 @@ function code_statements_handler(classType,format,id){
 
 		// creating sub fields
 		var sub_element;
-		if(key.search('display')){
+		if(key.search('display')!=-1){
 			sub_element=document.createElement("div");
 			sub_element.innerHTML=value;
 
 		}
 
-		if(key.search('input')){
+		if(key.search('input')!=-1){
 		sub_element=document.createElement("input");
 		var attr2=document.createAttribute("type");
 		attr2.value=value[1];
@@ -67,9 +67,11 @@ function code_statements_handler(classType,format,id){
 				var sub_attr=document.createAttribute("value");
 				sub_attr.value= children[i].getAttribute("data-value");
 				sub_element.setAttributeNode(sub_attr);
-			}
+				}
 			
-		}
+			}
+
+
 		}
 
 
@@ -147,6 +149,7 @@ function code_region_handler(classType,format,id){
 }
 
 function unload(id){
+	console.log('unloading');
 	var portion_right=document.getElementById("portion-right");
 
 	var del_element=document.getElementById(id+" yo!");
@@ -154,49 +157,49 @@ function unload(id){
 	var array_inputs=del_element.getElementsByTagName("input");
 	var main_element=document.getElementById(id);
 	
-	// clearing all the unnessary nodes
+	// // clearing all the unnessary nodes
 	var temparray=main_element.getElementsByTagName('h6');
 	for (var i = 0; i < temparray.length; i++) {
 		temparray[i].remove();
 	}
 
 	console.log(array_inputs);
-	for (var i = 0; i<=array_inputs.length - 1; i++) {
-		var sub_element=document.createElement("h6");
-		var attr=document.createAttribute("class");
-		attr.value=array_inputs[i].getAttribute("class");
+	// for (var i = 0; i<=array_inputs.length - 1; i++) {
+	// 	var sub_element=document.createElement("h6");
+	// 	var attr=document.createAttribute("class");
+	// 	attr.value=array_inputs[i].getAttribute("class");
 		
-		var attr2=document.createAttribute("data-value");
-		attr2.value=array_inputs[i].value;
+	// 	var attr2=document.createAttribute("data-value");
+	// 	attr2.value=array_inputs[i].value;
 
-		sub_element.setAttributeNode(attr);
-		sub_element.setAttributeNode(attr2);
+	// 	sub_element.setAttributeNode(attr);
+	// 	sub_element.setAttributeNode(attr2);
 
-		sub_element.innerHTML=attr.value+" : "+attr2.value;
-		console.log(sub_element);
-		//mechanism to attach the property to h5 
-		var temp= main_element.getElementsByTagName("h5");
-		console.log(temp.length);
-		console.log(main_element);
-		var check=false;
-		var the_element_to_be_changed;
+	// 	sub_element.innerHTML=attr.value+" : "+attr2.value;
+	// 	console.log(sub_element);
+	// 	//mechanism to attach the property to h5 
+	// 	var temp= main_element.getElementsByTagName("h5");
+	// 	console.log(temp.length);
+	// 	console.log(main_element);
+	// 	var check=false;
+	// 	var the_element_to_be_changed;
 
-		for (var i = 0; i <= temp.length - 1 && !check; i++) {
-			if(temp[i].class=attr.value) {check=true;the_element_to_be_changed=temp[i];}
-		}
-		console.log(check);
-		delete temp;
+	// 	for (var i = 0; i <= temp.length - 1 && !check; i++) {
+	// 		if(temp[i].class=attr.value) {check=true;the_element_to_be_changed=temp[i];}
+	// 	}
+	// 	console.log(check);
+	// 	delete temp;
 
-		if(check){
-			the_element_to_be_changed.setAttribute("data-value")=attr2.value;
-		}else{
-			main_element.appendChild(sub_element);
-		}
+	// 	if(check){
+	// 		the_element_to_be_changed.setAttribute("data-value")=attr2.value;
+	// 	}else{
+	// 		main_element.appendChild(sub_element);
+	// 	}
 
 
-	}
+	// }
 
-	del_element.remove();
+	// del_element.remove();
 }
 
 function load(classType,format,id){
