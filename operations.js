@@ -164,42 +164,42 @@ function unload(id){
 	}
 
 	console.log(array_inputs);
-	// for (var i = 0; i<=array_inputs.length - 1; i++) {
-	// 	var sub_element=document.createElement("h6");
-	// 	var attr=document.createAttribute("class");
-	// 	attr.value=array_inputs[i].getAttribute("class");
+	for (var i = 0; i<=array_inputs.length - 1; i++) {
+		var sub_element=document.createElement("h6");
+		var attr=document.createAttribute("class");
+		attr.value=array_inputs[i].getAttribute("class");
 		
-	// 	var attr2=document.createAttribute("data-value");
-	// 	attr2.value=array_inputs[i].value;
+		var attr2=document.createAttribute("data-value");
+		attr2.value=array_inputs[i].value;
 
-	// 	sub_element.setAttributeNode(attr);
-	// 	sub_element.setAttributeNode(attr2);
+		sub_element.setAttributeNode(attr);
+		sub_element.setAttributeNode(attr2);
 
-	// 	sub_element.innerHTML=attr.value+" : "+attr2.value;
-	// 	console.log(sub_element);
-	// 	//mechanism to attach the property to h5 
-	// 	var temp= main_element.getElementsByTagName("h5");
-	// 	console.log(temp.length);
-	// 	console.log(main_element);
-	// 	var check=false;
-	// 	var the_element_to_be_changed;
+		sub_element.innerHTML=attr.value+" : "+attr2.value;
+		console.log(sub_element);
+		//mechanism to attach the property to h5 
+		var temp= main_element.getElementsByTagName("h5");
+		console.log(temp.length);
+		console.log(main_element);
+		var check=false;
+		var the_element_to_be_changed;
 
-	// 	for (var i = 0; i <= temp.length - 1 && !check; i++) {
-	// 		if(temp[i].class=attr.value) {check=true;the_element_to_be_changed=temp[i];}
-	// 	}
-	// 	console.log(check);
-	// 	delete temp;
+		for (var j = 0; j <= temp.length - 1 && !check; j++) {
+			if(temp[j].class=attr.value) {check=true;the_element_to_be_changed=temp[j];}
+		}
+		console.log(check);
+		delete temp;
 
-	// 	if(check){
-	// 		the_element_to_be_changed.setAttribute("data-value")=attr2.value;
-	// 	}else{
-	// 		main_element.appendChild(sub_element);
-	// 	}
+		if(check){
+			the_element_to_be_changed.setAttribute("data-value")=attr2.value;
+		}else{
+			main_element.appendChild(sub_element);
+		}
 
 
-	// }
+	}
 
-	// del_element.remove();
+	del_element.remove();
 }
 
 function load(classType,format,id){
