@@ -5,62 +5,61 @@ var regions_info=[];
 read_file("statements_info.json",statements_info,true,false);
 read_file("regions_info.json",regions_info,true,false);
 var flag_erase=0;
+var flag_common_variables=false;
 var common_variable_names=[
-
-    a,
-    x,
-    i,
-    value,
-    p,
-    name,
-    xt,
-    file,
-    b,
-    item,
-    list,
-    state,
-    test,
-    c,
-    argcount,
-    check,
-    y,
-    none,
-    f,
-    t,
-    result,
-    status,
-    data,
-    set,
-    report,
-    instr,
-    used,
-    index,
-    unit,
-    text,
-    j,
-    right,
-    s,
-    one,
-    no,
-    parameter,
-    e,
-    input,
-    current,
-    prob,
-    g,
-    d,
-    ok,
-    n,
-    any,
-    values,
-    length,
-    l,
-    point,
-    zero,
-    position,
-    call,
-    output
-
+    "a",
+    "x",
+    "i",
+    "value",
+    "p",
+    "name",
+    "xt",
+    "file",
+    "b",
+    "item",
+    "list",
+    "state",
+    "test",
+    "c",
+    "argcount",
+    "check",
+    "y",
+    "none",
+    "f",
+    "t",
+    "result",
+    "status",
+    "data",
+    "set",
+    "report",
+    "instr",
+    "used",
+    "index",
+    "unit",
+    "text",
+    "j",
+    "right",
+    "s",
+    "one",
+    "no",
+    "parameter",
+    "e",
+    "input",
+    "current",
+    "prob",
+    "g",
+    "d",
+    "ok",
+    "n",
+    "any",
+    "values",
+    "length",
+    "l",
+    "point",
+    "zero",
+    "position",
+    "call",
+    "output",
 	];
 
 
@@ -74,8 +73,24 @@ function get_id(){
 }
 
 function display_boxes(){
-	console.log("display_boxes");
+
 	var array=document.getElementsByClassName("focus-window");
+	if(flag_common_variables==0) 
+	{
+
+		for (var i = 0; i < common_variable_names.length; i++) {
+			var sub_element= document.createElement("li");	
+			sub_element.innerHTML= common_variable_names[i];
+
+			var attr=document.createAttribute("class");
+			attr.value="box_item";
+			sub_element.setAttributeNode(attr);
+
+			array[0].appendChild(sub_element);
+		}
+
+		flag_common_variables=1;
+	}
 	for (var i = 0; i < array.length; i++) {
 		array[i].style.display="block";
 	}
@@ -83,7 +98,7 @@ function display_boxes(){
 }
 
 function hide_boxes(){
-	console.log("hide_boxes");
+
 	var array=document.getElementsByClassName("focus-window");
 	for (var i = 0; i < array.length; i++) {
 		array[i].style.display="none";
