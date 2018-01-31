@@ -36,6 +36,8 @@
 			<li draggable=true class="statements" id="s14" data-format="field">Field</li>
 			<li draggable=true class="statements" id="s15" data-format=".">Dot</li>
 			<li draggable=true class="statements" id="s16" data-format=";">Semi-Colon</li>
+			<li draggable=true class="statements" id="s17" data-format="argument">Argument</li>
+			<li draggable=true class="statements" id="s18" data-format="argument_end">Argument_end</li>
 		</ul>
 
 
@@ -43,32 +45,38 @@
 	<div class="segment border-basic ">
 		<!-- Regions -->
 		<ul type="none" class="cover-width cover-height" >
-		<ul type="none" class="cover-width region" id="r1">
+
+
+
+		<ul type="none" class="cover-width region" id="r1" data-format="function">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>Function</h5></li>
 		</ul>
-		<ul type="none" class="cover-width region" id="r2">
+		<ul type="none" class="cover-width region" id="r2" data-format="class">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>Class</h5></li>
 		</ul>
-		<ul type="none" class="cover-width region" id="r3">
+		<ul type="none" class="cover-width region" id="r3" data-format="forloop">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>For loop</h5></li>
 		</ul>
 
-		<ul type="none" class="cover-width region" id="r4">
+		<ul type="none" class="cover-width region" id="r4" data-format="main">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>Main</h5></li>
 		</ul>
-		<ul type="none" class="cover-width region" id="r5">
+		<ul type="none" class="cover-width region" id="r5" data-format="if">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>If {}</h5></li>
 		</ul>
-		<ul type="none" class="cover-width region" id="r6">
+		<ul type="none" class="cover-width region" id="r6" data-format="else">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>Else {}</h5></li>
 		</ul>
-		<ul type="none" class="cover-width region" id="r7">
+		<ul type="none" class="cover-width region" id="r7" data-format="switch">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>Switch</h5></li>
 		</ul>
-		<ul type="none" class="cover-width region" id="r9">
+		<ul type="none" class="cover-width region" id="r9" data-format="case">
 		<li class="" ondrop="drop_for_regionHeading(event)"><h5>Case</h5></li>
 		</ul>
 		
+
+
+
 		</ul>
 
 	</div>
@@ -94,6 +102,7 @@
 
 <div id="toolbar" class="toolbar" >
 	<img src="build.png" alt="Construct the code" width="20px" height="20px" onclick="build()"  tooltip="Construct the code!">
+	<img src="build.png" alt="Erase" width="20px" height="20px" onclick="erase()"  tooltip="Erase">
 </div>
 </div>
 
@@ -109,6 +118,7 @@
 			ids[i].setAttributeNode(attr);
 		}
 
+
 	}
 
 	var regions=document.getElementsByTagName('ul');
@@ -122,6 +132,13 @@
 			regions[i].setAttributeNode(attr);
 			regions[i].setAttributeNode(attr2);
 
+			var child=regions[i].childNodes[1];
+			console.log(child);
+			var attr3=document.createAttribute("id");
+			attr3.value="rl"+i;
+			child.setAttributeNode(attr3);
+
+			child.setAttribute("class","width height");
 		}
 
 	}

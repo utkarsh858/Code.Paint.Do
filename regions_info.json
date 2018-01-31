@@ -2,10 +2,9 @@
 	"function":{
 		"display":"Function name",
 		"input":["function-name","text"],
-		"display":"Return type",
-		"input":["return-type","text"],
-		"display":"Number of arguments",
-		"input":["num-arguments"]
+		"display1":"Return type",
+		"input1":["return-type","text"]
+
 
 	},
 	"class":{

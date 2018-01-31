@@ -46,6 +46,38 @@
 	},
 	"none":{
 		"string":""
+	},
+	"return":{
+		"string":"return %1$s;\n"
+	},
+	"argument":{
+		"string":"%2$s %1$s ;\n"
+	},
+	"argument_end":{
+		"string":"%2$s %1$s){\n"
+	},
+
+
+
+
+
+
+	"function":{
+		"open":{
+			"string":"%2$s %1$s("
+		},
+		"close":{
+			"string":"}"
+		}
+	},
+	"":{
+		"open":{
+			"string":""
+		},
+		"close":{
+			"string":""
+		}
 	}
+	
 
 }

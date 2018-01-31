@@ -39,6 +39,22 @@
 		"input":["variable-name","text"]
 	},
 	".":{},
-	";":{}
+	";":{},
+	"argument":{
+		"display":"Argument name is..",
+		"input":["variable-name","text"],
+		"display":"Argument type is...",
+		"input":["variable-type","text"],
+		"display":"Default value is...",
+		"input":["variable-value","text"]
+	},
+	"argument_end":{
+		"display":"Argument name is..",
+		"input":["variable-name","text"],
+		"display":"Argument type is...",
+		"input":["variable-type","text"],
+		"display":"Default value is...",
+		"input":["variable-value","text"]
+	}
 
 }

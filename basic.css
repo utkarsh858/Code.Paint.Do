@@ -9,6 +9,14 @@
 	/*overflow-x: */
 }
 
+.width: {
+	width: 100%;
+}
+
+.height:{
+	min-height: 100%;
+}
+
 .relative{
 	position: relative;
 }
@@ -69,8 +77,8 @@ ul {
 }
 
 .code-region{
-	padding-bottom: 10px;
-	padding-top:10px;
+	padding-bottom: 0px;
+	padding-top:0px;
 	padding-left: 0px;
 	background-color: pink;
 	min-height: 20px;
