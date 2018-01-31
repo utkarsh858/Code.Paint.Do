@@ -16,6 +16,22 @@ function get_id(){
 	return global_id++;
 }
 
+function display_boxes(){
+	var array=document.getElementsByClassName("focus-window");
+	for (var i = 0; i < array.length; i++) {
+		array[i].style.display="block";
+	}
+	
+}
+
+function hide_boxes(){
+	var array=document.getElementsByClassName("focus-window");
+	for (var i = 0; i < array.length; i++) {
+		array[i].style.display="none";
+	}
+
+}
+
 
 function code_statements_handler(classType,format,id){
 
@@ -55,6 +71,14 @@ function code_statements_handler(classType,format,id){
 		var attr3=document.createAttribute("class");
 		attr3.value=value[0];
 		sub_element.setAttributeNode(attr3);
+
+		var attr4=document.createAttribute("onfocusin");
+		attr4.value="display_boxes()";
+		sub_element.setAttributeNode(attr4);
+
+		var attr5=document.createAttribute("onfocusin");
+		attr5.value="hide_boxes()";
+		sub_element.setAttributeNode(attr5);
 
 		//searching for already present tag conting the details
 
@@ -123,6 +147,14 @@ function code_region_handler(classType,format,id){
 		var attr3=document.createAttribute("class");
 		attr3.value=value[0];
 		sub_element.setAttributeNode(attr3);
+
+		var attr4=document.createAttribute("onfocusin");
+		attr4.value="display_boxes()";
+		sub_element.setAttributeNode(attr4);
+
+		var attr5=document.createAttribute("onfocusin");
+		attr5.value="hide_boxes()";
+		sub_element.setAttributeNode(attr5);
 
 		//searching for already present tag conting the details
 
