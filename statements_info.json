@@ -7,7 +7,7 @@
 	},
 	"expression":{
 		"display":"Variable name is",
-		"input":["variable-name","text"],
+		"input":["variable-name-used","text"],
 		"display1":"Variable value is",
 		"input1":["variable-value","text"]
 	},
@@ -17,7 +17,7 @@
 	},
 	"input":{
 		"display":"Variable name is",
-		"input":["variable-name","text"]
+		"input":["variable-name-used","text"]
 	},
 	"include":{
 		"display":"Package//File name",
@@ -29,7 +29,7 @@
 	"memset":{},
 	"return":{
 		"display":"Return this",
-		"input":["variable-name","text"]
+		"input":["variable-name-used","text"]
 	},
 	"memcpy":{},
 	"private":{},
