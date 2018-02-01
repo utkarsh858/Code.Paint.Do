@@ -86,6 +86,10 @@ function display_boxes(){
 			attr.value="box_item";
 			sub_element.setAttributeNode(attr);
 
+			var attr2=document.createAttribute("draggable");
+			attr2.value="true";
+			sub_element.setAttributeNode(attr2);
+
 			array[0].appendChild(sub_element);
 		}
 
@@ -97,11 +101,15 @@ function display_boxes(){
 	
 }
 
-function hide_boxes(){
-
+function hide_boxes(ev){
+	
+	
+	if(['recommender','shortcuts','numberdumber'].indexOf(ev.target.id)==-1 && ev.target.tagName!="INPUT")
+	{
 	var array=document.getElementsByClassName("focus-window");
 	for (var i = 0; i < array.length; i++) {
 		array[i].style.display="none";
+	}
 	}
 
 }
@@ -150,9 +158,9 @@ function code_statements_handler(classType,format,id){
 		attr4.value="display_boxes()";
 		sub_element.setAttributeNode(attr4);
 
-		var attr5=document.createAttribute("onfocusout");
-		attr5.value="hide_boxes()";
-		sub_element.setAttributeNode(attr5);
+		// var attr5=document.createAttribute("onfocusout");
+		// attr5.value="hide_boxes()";
+		// sub_element.setAttributeNode(attr5);
 
 		//searching for already present tag conting the details
 
@@ -226,9 +234,9 @@ function code_region_handler(classType,format,id){
 		attr4.value="display_boxes()";
 		sub_element.setAttributeNode(attr4);
 
-		var attr5=document.createAttribute("onfocusout");
-		attr5.value="hide_boxes()";
-		sub_element.setAttributeNode(attr5);
+		// var attr5=document.createAttribute("onfocusout");
+		// attr5.value="hide_boxes()";
+		// sub_element.setAttributeNode(attr5);
 
 		//searching for already present tag conting the details
 
