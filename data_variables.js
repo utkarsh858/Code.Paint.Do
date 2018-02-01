@@ -7,6 +7,7 @@ read_file("regions_info.json",regions_info,true,false);
 var flag_erase=0;
 var flag_common_variables=false;
 var flag_shortcuts=false;
+var flag_numberdumber=false;
 var common_variable_names=[
     "a",
     "x",
@@ -63,8 +64,31 @@ var common_variable_names=[
     "output",
 	];
 
-var used_keywords=[];
-var reserved_keywords=[];
+var used_keywords=[
+    'used1',
+    'used2',
+    'used2',
+    'used2',
+    'use9'
+];
+var reserved_keywords=[
+    'int',
+    'long',
+    'short',
+    'double',
+    'float',
+    'string',
+    'char',
+    'size_t',
+    'bool',
+    'void',
+    'signed',
+    'unsigned',
+    'enum',
+    'delete',
+    'this'
+
+];
 var shortcuts_symbols=[
     '%',
     '*',
@@ -74,11 +98,13 @@ var shortcuts_symbols=[
     '.',
     '<',
     '>',
+    '(',
+    ')',
     '>>',
     '<<',
     '|',
     '&',
-    'whitespace',
+    ' ',
     'Backspace',
     '*',
     '->',
@@ -88,5 +114,7 @@ var shortcuts_symbols=[
     'C',
     'D',
     'E',
-    'F'
+    'F',
+    'sizeof','true',
+    'false'
     ];
