@@ -5,6 +5,13 @@ function drag(ev) {
 
 }
 
+function dragForInput(ev) {
+    ev.dataTransfer.dropEffect="copy";
+
+    ev.dataTransfer.setData("text/plain", ev.target.innerText);
+
+}
+
 function prepare_codestatement(ev){
     ev.preventDefault();
     ev.dataTransfer.dropEffect = "copy"
@@ -68,4 +75,13 @@ function allowDrop(ev){
 function drop_for_regionHeading(ev){
     ev.stopPropagation();
 
+}
+
+function dropForInput(ev){
+
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "copy"
+
+    var data = ev.dataTransfer.getData("text");
+    ev.target.setAttribute("value",ev.target.value+data);
 }

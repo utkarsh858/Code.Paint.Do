@@ -1,66 +1,3 @@
-var global_id=0;
-
-var statements_info=[];
-var regions_info=[];
-read_file("statements_info.json",statements_info,true,false);
-read_file("regions_info.json",regions_info,true,false);
-var flag_erase=0;
-var flag_common_variables=false;
-var common_variable_names=[
-    "a",
-    "x",
-    "i",
-    "value",
-    "p",
-    "name",
-    "xt",
-    "file",
-    "b",
-    "item",
-    "list",
-    "state",
-    "test",
-    "c",
-    "argcount",
-    "check",
-    "y",
-    "none",
-    "f",
-    "t",
-    "result",
-    "status",
-    "data",
-    "set",
-    "report",
-    "instr",
-    "used",
-    "index",
-    "unit",
-    "text",
-    "j",
-    "right",
-    "s",
-    "one",
-    "no",
-    "parameter",
-    "e",
-    "input",
-    "current",
-    "prob",
-    "g",
-    "d",
-    "ok",
-    "n",
-    "any",
-    "values",
-    "length",
-    "l",
-    "point",
-    "zero",
-    "position",
-    "call",
-    "output",
-	];
 
 
 function erase(ev) {
@@ -90,11 +27,41 @@ function display_boxes(){
 			attr2.value="true";
 			sub_element.setAttributeNode(attr2);
 
+			var attr3=document.createAttribute("ondragstart");
+			attr3.value="dragForInput(event)";
+			sub_element.setAttributeNode(attr3);
+
 			array[0].appendChild(sub_element);
 		}
 
 		flag_common_variables=1;
 	}
+
+	if(flag_shortcuts==0){
+
+		for (var i = 0; i < shortcuts_symbols.length; i++) {
+			var sub_element= document.createElement("li");	
+			sub_element.innerHTML= shortcuts_symbols[i];
+
+			var attr=document.createAttribute("class");
+			attr.value="shortcuts-items";
+			sub_element.setAttributeNode(attr);
+
+			var attr2=document.createAttribute("draggable");
+			attr2.value="true";
+			sub_element.setAttributeNode(attr2);
+
+			var attr3=document.createAttribute("ondragstart");
+			attr3.value="dragForInput(event)";
+			sub_element.setAttributeNode(attr3);
+
+			array[1].appendChild(sub_element);
+		}
+
+		flag_shortcuts==1;
+	}
+
+	// manifest all blue bloxes
 	for (var i = 0; i < array.length; i++) {
 		array[i].style.display="block";
 	}
@@ -158,9 +125,17 @@ function code_statements_handler(classType,format,id){
 		attr4.value="display_boxes()";
 		sub_element.setAttributeNode(attr4);
 
-		// var attr5=document.createAttribute("onfocusout");
-		// attr5.value="hide_boxes()";
-		// sub_element.setAttributeNode(attr5);
+		var attr5=document.createAttribute("ondragover");
+		attr5.value="allowDrop(event)";
+		sub_element.setAttributeNode(attr5);
+
+		var attr5=document.createAttribute("ondrop");
+		attr5.value="dropForInput(event)";
+		sub_element.setAttributeNode(attr5);
+
+		var attr6=document.createAttribute("value");
+		attr6.value="";
+		sub_element.setAttributeNode(attr6);
 
 		//searching for already present tag conting the details
 
@@ -234,9 +209,17 @@ function code_region_handler(classType,format,id){
 		attr4.value="display_boxes()";
 		sub_element.setAttributeNode(attr4);
 
-		// var attr5=document.createAttribute("onfocusout");
-		// attr5.value="hide_boxes()";
-		// sub_element.setAttributeNode(attr5);
+		var attr5=document.createAttribute("ondragover");
+		attr5.value="allowDrop(event)";
+		sub_element.setAttributeNode(attr5);
+
+		var attr5=document.createAttribute("ondrop");
+		attr5.value="dropForInput(event)";
+		sub_element.setAttributeNode(attr5);
+
+		var attr6=document.createAttribute("value");
+		attr6.value="";
+		sub_element.setAttributeNode(attr6);
 
 		//searching for already present tag conting the details
 
