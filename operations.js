@@ -364,7 +364,10 @@ function select(ev){
 
 	}
 	else{
+		var temp=document.getElementById(ev.target.id+" yo!");
+		temp.remove();
 		ev.target.remove();
+
 	}
 
 }
