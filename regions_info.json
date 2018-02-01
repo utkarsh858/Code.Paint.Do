@@ -12,13 +12,15 @@
 		"input":["variable-name","text"]
 	},
 	"for":{
-		"display":"Iterator name",
+		"display":"Field 1",
+		"input":["variable-name","text"],
+		"display":"Field 2",
+		"input":["variable-name","text"],
+		"display":"Field 3",
 		"input":["variable-name","text"]
 
 	},
 	"main":{
-		"display":"Number of arguments",
-		"input":["num-arguments","text"]
 
 	},
 	"if":{

@@ -353,6 +353,7 @@ function select(ev){
 			if(element.getAttribute("class").search("selected")==-1)
 				{element.setAttribute("class",string+" selected");
 				element.style.background="blue";
+				console.log(element.getAttribute("id"));
 				load(element.getAttribute("class"),element.getAttribute("data-format"),element.getAttribute("id"));
 			}
 			else{
@@ -365,7 +366,7 @@ function select(ev){
 	}
 	else{
 		var temp=document.getElementById(ev.target.id+" yo!");
-		temp.remove();
+		if(temp!=null) temp.remove();
 		ev.target.remove();
 
 	}

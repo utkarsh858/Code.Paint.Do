@@ -2,7 +2,7 @@ var output_format=[];
 read_file("build-file.json",output_format,true,false);
 
 function recursive_build(node){
-
+	
 	var opening_string= output_format[0][node.getAttribute("data-format")]["open"]["string"];
 	var array_args=[];
 	var sub_details_element=node.getElementsByTagName('h6');

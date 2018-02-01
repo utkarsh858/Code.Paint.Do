@@ -15,7 +15,7 @@
 		"string":"#include <%1$s>;\n"
 	},
 	"null":{
-		"string":"if(10<20);\n"
+		"string":"if(10<20){};\n"
 	},
 	"continue":{
 		"string":"continue;\n"
@@ -24,10 +24,10 @@
 		"string":"break;\n"
 	},
 	"memset":{
-		"string":"memset(,,,);\n"
+		"string":"memset(%1$s,%2$s,%3$s);\n"
 	},
 	"memcpy":{
-		"string":"memcpy(,,,);\n"
+		"string":"memcpy(%1$s,%2$s,%3$s);\n"
 	},
 	"private":{
 		"string":"private :\n"
@@ -70,9 +70,57 @@
 			"string":"}"
 		}
 	},
-	"":{
+	"class":{
 		"open":{
-			"string":""
+			"string":"Class %1$s {"
+		},
+		"close":{
+			"string":"};"
+		}
+	},
+	"forloop":{
+		"open":{
+			"string":"for(%1$s,%2$s,%3$s){"
+		},
+		"close":{
+			"string":"}"
+		}
+	},
+	"main":{
+		"open":{
+			"string":"int main(int argc, char const *argv[]){"
+		},
+		"close":{
+			"string":"}"
+		}
+	},
+	"if":{
+		"open":{
+			"string":"if(%1$s){"
+		},
+		"close":{
+			"string":"}"
+		}
+	},
+	"else":{
+		"open":{
+			"string":"else{"
+		},
+		"close":{
+			"string":"}"
+		}
+	},
+	"switch":{
+		"open":{
+			"string":"switch(%1$s){"
+		},
+		"close":{
+			"string":"}"
+		}
+	},
+	"case":{
+		"open":{
+			"string":"case %1$s :"
 		},
 		"close":{
 			"string":""

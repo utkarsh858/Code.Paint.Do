@@ -26,12 +26,28 @@
 	"null":{},
 	"continue":{},
 	"break":{},
-	"memset":{},
+	"memset":{
+		"display":"void* destination",
+		"input":["variable-name","text"],
+		"display":"int character",
+		"input":["variable-name","text"],
+		"display":"size_t number",
+		"input":["variable-name","text"]
+
+	},
 	"return":{
 		"display":"Return this",
 		"input":["variable-name-used","text"]
 	},
-	"memcpy":{},
+	"memcpy":{
+		"display":"void* destination",
+		"input":["variable-name","text"],
+		"display":"const void* character",
+		"input":["variable-name","text"],
+		"display":"size_t number",
+		"input":["variable-name","text"]
+
+	},
 	"private":{},
 	"public":{},
 	"field":{
