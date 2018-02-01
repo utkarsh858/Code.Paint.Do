@@ -13,7 +13,7 @@
 	},
 	"print":{
 		"display":"What should I print?",
-		"input":["print_value","text"]
+		"input":["variable-name-used","text"]
 	},
 	"input":{
 		"display":"Variable name is",

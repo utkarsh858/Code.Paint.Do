@@ -282,14 +282,13 @@ function unload(id){
 	
 	var array_inputs=del_element.getElementsByTagName("input");
 	var main_element=document.getElementById(id);
-	
 	// // clearing all the unnessary nodes
 	var temparray=main_element.getElementsByTagName('h6');
-	for (var i = 0; i < temparray.length; i++) {
-		temparray[i].remove();
-	}
-	
 
+
+	for (var i = temparray.length - 1; i >= 0; i--) {
+		temparray[i].parentNode.removeChild(temparray[i]);
+	}
 	
 	for (var i = 0; i<=array_inputs.length - 1; i++) {
 		var sub_element=document.createElement("h6");
@@ -304,25 +303,27 @@ function unload(id){
 
 		sub_element.innerHTML=attr.value+" : "+attr2.value;
 		
-		//mechanism to attach the property to h5 
-		var temp= main_element.getElementsByTagName("h5");
+		//  NONSENSE
+		// //mechanism to attach the property to h5 
+		// var temp= main_element.getElementsByTagName("h5");
 		
 		
-		var check=false;
-		var the_element_to_be_changed;
+		// var check=false;
+		// var the_element_to_be_changed;
 
-		for (var j = 0; j <= temp.length - 1 && !check; j++) {
-			if(temp[j].class=attr.value) {check=true;the_element_to_be_changed=temp[j];}
-		}
+		// for (var j = 0; j <= temp.length - 1 && !check; j++) {
+		// 	if(temp[j].class=attr.value) {check=true;the_element_to_be_changed=temp[j];}
+		// }
 		
-		delete temp;
+		// delete temp;
 
-		if(check){
-			the_element_to_be_changed.setAttribute("data-value",attr2.value);
-		}else{
-			main_element.appendChild(sub_element);
-		}
+		// if(check){
+		// 	the_element_to_be_changed.setAttribute("data-value",attr2.value);
+		// }else{
+		// 	main_element.appendChild(sub_element);
+		// }
 
+		main_element.appendChild(sub_element);
 
 	}
 
