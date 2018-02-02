@@ -9,6 +9,23 @@ function get_id(){
 	return global_id++;
 }
 
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function updateUsedVariables(string){
+	var i;
+	if(( i=used_keywords.indexOf(string))>-1){
+		console.log(used_keywords);
+		used_keywords.splice(i,1);
+		console.log(used_keywords);
+		
+		used_keywords.push(string);
+	}else{
+		used_keywords.push(string);
+	}
+}
+
 function display_boxes(){
 
 	var array=document.getElementsByClassName("focus-window");
@@ -283,8 +300,15 @@ function unload(id){
 	var array_inputs=del_element.getElementsByTagName("input");
 	var main_element=document.getElementById(id);
 	// // clearing all the unnessary nodes
-	var temparray=main_element.getElementsByTagName('h6');
+	var temptemparray=main_element.getElementsByTagName('h6');
+	var temparray=[];
 
+
+	//  ONLY IMMEDIATE H6 MEMBERS ARE REQUIRED
+	for (var i = temptemparray.length - 1; i >= 0; i--) {
+		if(temptemparray[i].parentNode.id==main_element.id)
+			temparray.push(temptemparray[i]);
+	}
 
 	for (var i = temparray.length - 1; i >= 0; i--) {
 		temparray[i].parentNode.removeChild(temparray[i]);
@@ -294,15 +318,20 @@ function unload(id){
 		var sub_element=document.createElement("h6");
 		var attr=document.createAttribute("class");
 		attr.value=array_inputs[i].getAttribute("class");
-		
 		var attr2=document.createAttribute("data-value");
 		attr2.value=array_inputs[i].value;
 
+		var attr3=document.createAttribute("ondrop");
+		attr3.value="drop_for_regionDescriptions(event)";
+
 		sub_element.setAttributeNode(attr);
 		sub_element.setAttributeNode(attr2);
+		sub_element.setAttributeNode(attr3);
 
 		sub_element.innerHTML=attr.value+" : "+attr2.value;
-		
+	
+		if(attr.value=="variable-name") updateUsedVariables(attr2.value);
+
 		//  NONSENSE
 		// //mechanism to attach the property to h5 
 		// var temp= main_element.getElementsByTagName("h5");
@@ -323,7 +352,12 @@ function unload(id){
 		// 	main_element.appendChild(sub_element);
 		// }
 
-		main_element.appendChild(sub_element);
+		//OLD METHOD FOR ADDING THE CHILD
+		// main_element.appendChild(sub_element);
+
+		//NOW lets add it after the h5 tag
+		var title_main_element=main_element.getElementsByTagName('h5')[0];
+		insertAfter(sub_element,title_main_element);
 
 	}
 

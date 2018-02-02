@@ -51,7 +51,7 @@
 		"string":"return %1$s;\n"
 	},
 	"argument":{
-		"string":"%2$s %1$s ;\n"
+		"string":"%2$s %1$s ,"
 	},
 	"argument_end":{
 		"string":"%2$s %1$s){\n"
@@ -67,60 +67,60 @@
 			"string":"%2$s %1$s("
 		},
 		"close":{
-			"string":"}"
+			"string":"}\n"
 		}
 	},
 	"class":{
 		"open":{
-			"string":"Class %1$s {"
+			"string":"Class %1$s {\n"
 		},
 		"close":{
-			"string":"};"
+			"string":"};\n"
 		}
 	},
 	"forloop":{
 		"open":{
-			"string":"for(%1$s,%2$s,%3$s){"
+			"string":"for(%1$s,%2$s,%3$s){\n"
 		},
 		"close":{
-			"string":"}"
+			"string":"}\n"
 		}
 	},
 	"main":{
 		"open":{
-			"string":"int main(int argc, char const *argv[]){"
+			"string":"int main(int argc, char const *argv[]){\n"
 		},
 		"close":{
-			"string":"}"
+			"string":"return 0; \n}\n"
 		}
 	},
 	"if":{
 		"open":{
-			"string":"if(%1$s){"
+			"string":"if(%1$s){\n"
 		},
 		"close":{
-			"string":"}"
+			"string":"}\n"
 		}
 	},
 	"else":{
 		"open":{
-			"string":"else{"
+			"string":"else{\n"
 		},
 		"close":{
-			"string":"}"
+			"string":"}\n"
 		}
 	},
 	"switch":{
 		"open":{
-			"string":"switch(%1$s){"
+			"string":"switch(%1$s){\n"
 		},
 		"close":{
-			"string":"}"
+			"string":"}\n"
 		}
 	},
 	"case":{
 		"open":{
-			"string":"case %1$s :"
+			"string":"case %1$s :\n"
 		},
 		"close":{
 			"string":""

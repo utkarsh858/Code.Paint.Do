@@ -5,7 +5,15 @@ function recursive_build(node){
 	
 	var opening_string= output_format[0][node.getAttribute("data-format")]["open"]["string"];
 	var array_args=[];
-	var sub_details_element=node.getElementsByTagName('h6');
+	var sub_details_element_notImmediate=node.getElementsByTagName('h6');
+	var sub_details_element=[];
+
+	for (var i = 0; i < sub_details_element_notImmediate.length; i++) {
+		if(sub_details_element_notImmediate[i].parentNode.id==node.id)
+			sub_details_element.push(sub_details_element_notImmediate[i]);
+	}
+	
+
 	for (var i = 0; i < sub_details_element.length; i++) {
 		array_args.push(sub_details_element[i].getAttribute('data-value'));
 	}

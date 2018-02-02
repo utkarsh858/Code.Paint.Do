@@ -77,6 +77,10 @@ function drop_for_regionHeading(ev){
 
 }
 
+function drop_for_regionDescriptions(ev){
+    ev.stopPropagation();
+}
+
 function dropForInput(ev){
 
     ev.preventDefault();

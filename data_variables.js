@@ -64,13 +64,7 @@ var common_variable_names=[
     "output",
 	];
 
-var used_keywords=[
-    'used1',
-    'used2',
-    'used2',
-    'used2',
-    'use9'
-];
+var used_keywords=[];    //pseudo machine-learning.
 var reserved_keywords=[
     'int',
     'long',
