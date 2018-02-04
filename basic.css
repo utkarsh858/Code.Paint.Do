@@ -1,3 +1,18 @@
+h5 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+}
+
+h4 {
+	margin-top: 0px;
+	margin-bottom:0px;
+}
+
+.region{
+	color:white;
+}
+
 .portion{
 	height:100%;
 	width:29%;
@@ -6,7 +21,8 @@
 	height:100%;
 	width:40%;
 	overflow-y: auto;
-	/*overflow-x: */
+	margin-top: 0px;
+	margin-bottom:0px;
 }
 
 .width: {
@@ -23,11 +39,16 @@
 
 html{
 	height: 100%;
+	background-color: rgba(0,0,0,1);
+	color: white;
 }
 body{
 	margin:0;
 	height:100%;
 	overflow-y: hidden;
+	background-color: rgba(0,0,0,1);
+	color: white;
+	font-family: "Open Sans",sans-serif;
 }
 
 
@@ -39,7 +60,7 @@ body{
 }
 
 .border-basic{
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 .segment{
@@ -48,6 +69,9 @@ body{
 	overflow-y: auto;
 	overflow-x: none;
 	height: 50%;
+}
+.upper{
+	background-color: #038387;
 }
 
 .cover-width {
@@ -71,9 +95,18 @@ body{
 	
 }
 
+
+.statements{
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
 ul {
-	padding-left: 5px;
+	padding-left: 0px;
 	padding-top: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .code-region{

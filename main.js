@@ -4,7 +4,13 @@ url =require('url')
 
 let win 
 function createWindow(){
-	win = new BrowserWindow({width:1200,height : 900})
+	win = new BrowserWindow({
+		width:1200,
+		height : 900,
+		frame: true,
+		toolbar: true
+
+	})
 
 	win.loadURL(url.format({
 		pathname: path.join(__dirname,'index.html'),
