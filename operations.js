@@ -363,13 +363,13 @@ function select(ev){
     	var element;
     	if(ev.target.className.search('region-heading')!=-1 )
     		element=ev.target.parentElement;
+    	else if(ev.target.className.search('code-statements')!=-1)
+    		element=document.getElementById(ev.target.id);
     	else
     		element=document.getElementById(ev.target.id);
     	
-
+    	console.log(element);
     	var string=element.getAttribute("class");
-    	// string=string+" selected";
-    	
 	
 			if(element.getAttribute("class").search("selected")==-1)
 				{element.setAttribute("class",string+" selected");
@@ -386,8 +386,12 @@ function select(ev){
 				 b= parseInt(b, 16);
 				 c= parseInt(c, 16);
 				element.setAttribute("class",string.replace(" selected",""));
-				if(element.getAttribute("class").search("code-statements")) element.style.background="";
-				if(element.getAttribute("class").search("code-regions")) element.style.background="linear-gradient(to right, rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",1))";
+				if(element.getAttribute("class").search("code-statements")!=-1) 
+					{element.style.background="none";console.log('hoal')}
+				if(element.getAttribute("class").search("code-regions")!=-1) 
+					{element.style.background="linear-gradient(to right,\
+					 rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",1))";
+					console.log('pp');}
 				unload(element.getAttribute("id"));
 		}
 
