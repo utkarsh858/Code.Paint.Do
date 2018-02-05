@@ -12,8 +12,11 @@ h4 {
 
 .focus-window{
 	overflow-y: auto;
-	background-color: #038387;
+	background-color: #C239B3;
 	color:white;
+	position:absolute;
+	display: none;
+
 }
 
 .portion{
@@ -149,16 +152,10 @@ ul {
 }
 
 #recommender{
-	position:absolute;
-
 	top:10px;
 	left:10px;
 	width:200px;
 	height: 200px;
-	border: 1px dashed grey;
-	display:none;
-	background-color: blue;
-	color: white;
 	
 }
 
@@ -167,12 +164,6 @@ ul {
 	top:10px;
 	width: 200px;
 	height:200px;
-	border: 1px dashed grey;
-	position:absolute;
-	display:none;
-	background-color: blue;
-	color: white;
-
 }
 
 #numberdumber{
@@ -180,9 +171,4 @@ ul {
 	bottom:10px;
 	width:200px;
 	height:200px;
-	border:1px dashed grey;
-	position:absolute;
-	background-color: blue;
-	color: white;
-	display: none;
 }
