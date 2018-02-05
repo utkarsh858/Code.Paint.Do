@@ -110,6 +110,10 @@ ul {
 	margin-bottom: 0px;
 }
 
+.property-heading{
+	font-size: 20px;
+}
+
 .code-region{
 	padding-bottom: 0px;
 	padding-top:0px;

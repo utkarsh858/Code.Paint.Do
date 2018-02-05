@@ -152,6 +152,12 @@ function code_statements_handler(classType,format,id){
 			sub_element=document.createElement("div");
 			sub_element.innerHTML=value;
 
+			sub_element.style.color="#038387";
+
+			var attr2=document.createAttribute("class");
+			attr2.value="property-heading";
+			sub_element.setAttributeNode(attr2);
+
 		}
 
 		if(key.search('input')!=-1){
@@ -385,7 +391,7 @@ function select(ev){
 				 a= parseInt(a, 16);
 				 b= parseInt(b, 16);
 				 c= parseInt(c, 16);
-				element.setAttribute("class",string.replace(" selected",""));
+				element.setAttribute("class",element.className.replace(" selected",""));
 				if(element.getAttribute("class").search("code-statements")!=-1) 
 					{element.style.background="none";console.log('hoal')}
 				if(element.getAttribute("class").search("code-regions")!=-1) 
