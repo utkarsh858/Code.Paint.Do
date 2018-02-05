@@ -18,9 +18,9 @@ function insertAfter(newNode, referenceNode) {
 function updateUsedVariables(string){
 	var i;
 	if(( i=used_keywords.indexOf(string))>-1){
-		console.log(used_keywords);
+		
 		used_keywords.splice(i,1);
-		console.log(used_keywords);
+		
 		
 		used_keywords.push(string);
 	}else{
@@ -352,8 +352,7 @@ function unload(id){
 		// main_element.appendChild(sub_element);
 
 		//NOW lets add it after the h5 tag
-		console.log(main_element);
-		console.log("---------------------------------------------------------");
+
 		if(main_element.getAttribute('class').search('region')!=-1)
 			var title_main_element=main_element.getElementsByTagName('h5')[0];
 		else
@@ -387,13 +386,13 @@ function select(ev){
     	else
     		element=document.getElementById(ev.target.id);
     	
-    	console.log(element);
+    	
     	var string=element.getAttribute("class");
 	
 			if(element.getAttribute("class").search("selected")==-1)
 				{element.setAttribute("class",string+" selected");
 				element.style.background="#8E8CD8";
-				console.log(element.getAttribute("id"));
+				
 				load(element.getAttribute("class"),element.getAttribute("data-format"),element.getAttribute("id"));
 			}
 			else{
@@ -406,11 +405,11 @@ function select(ev){
 				 c= parseInt(c, 16);
 				element.setAttribute("class",element.className.replace(" selected",""));
 				if(element.getAttribute("class").search("code-statements")!=-1) 
-					{element.style.background="none";console.log('hoal')}
+					{element.style.background="none";}
 				if(element.getAttribute("class").search("code-regions")!=-1) 
 					{element.style.background="linear-gradient(to right,\
 					 rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",1))";
-					console.log('pp');}
+					}
 				unload(element.getAttribute("id"));
 		}
 
