@@ -13,7 +13,7 @@
 		
 	</script>
 </head>
-<body style="height: 100%" onclick="hide_boxes(event)">
+<body style="height: 100%" onclick="hide_boxes(event)" ontouchend="hide_boxes(event)">
 
 <!-- absolutely no need -->
 <!-- <script type="text/javascript">var onDropId="default_adder";</script> -->
@@ -83,7 +83,7 @@
 
 	</div>
 </div>
-<div id="center-portion" class="center-portion border-basic left unselectable" ondragover="allowDrop(event)" ondrop="drop(event)">
+<div id="center-portion" class="center-portion border-basic left unselectable" ondragover="allowDrop(event)"  ondrop="drop(event)">
 	<!-- middle	 -->
 		<ul type="none" class="cover-width cover-height" id="container" style="padding-left: 0px;">
 
@@ -103,8 +103,8 @@
 
 
 <div id="toolbar" class="toolbar" >
-	<button id="eraser-button" data-state="unselected" onclick="erase()">Eraser</button>
-	<button id="builder-button" data-state="selected" onclick="build()">Build it!</button>
+	<button id="eraser-button" data-state="unselected" onclick="erase()" ontouchend="erase()">Eraser</button>
+	<button id="builder-button" data-state="selected" onclick="build()" ontouchend="build()">Build it!</button>
 </div>
 </div>
 

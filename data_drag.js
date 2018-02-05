@@ -28,6 +28,10 @@ function prepare_codestatement(ev){
     onclick_attr.value="select(event)";
     dragged_element.setAttributeNode(onclick_attr);
 
+    var ontouchend_attr=document.createAttribute("ontouchend");
+    ontouchend_attr.value="select(event)";
+    dragged_element.setAttributeNode(ontouchend_attr);
+
     var ondragover_attr=document.createAttribute("ondragover");
     ondragover_attr.value="allowDrop(event)";
     dragged_element.setAttributeNode(ondragover_attr);
@@ -58,6 +62,10 @@ function prepare_codestatement(ev){
     var onclick_attr=document.createAttribute("onclick");
     onclick_attr.value="select(event)";
     dragged_element.setAttributeNode(onclick_attr);
+
+    var ontouchend_attr=document.createAttribute("ontouchend");
+    ontouchend_attr.value="select(event)";
+    dragged_element.setAttributeNode(ontouchend_attr);
 
     }
 
