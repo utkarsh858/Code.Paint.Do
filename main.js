@@ -8,7 +8,8 @@ function createWindow(){
 		width:1200,
 		height : 900,
 		frame: true,
-		toolbar: true
+		toolbar: true,
+		icon: path.join(__dirname, 'app.png')
 
 	})
 
