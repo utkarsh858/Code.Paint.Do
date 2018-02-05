@@ -9,10 +9,12 @@ h4 {
 	margin-bottom:0px;
 	font-size: 40px;
 }
-/*
-.region{
+
+.focus-window{
+	overflow-y: auto;
+	background-color: #038387;
 	color:white;
-}*/
+}
 
 .portion{
 	height:100%;

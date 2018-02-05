@@ -50,7 +50,9 @@ function display_boxes(){
 			attr3.value="dragForInput(event)";
 			sub_element.setAttributeNode(attr3);
 
-			array[0].appendChild(sub_element);
+			var listInsideBox=array[0].getElementsByTagName('ul')[0];
+			listInsideBox.appendChild(sub_element);
+			
 		}
 
 		flag_common_variables=1;
@@ -74,7 +76,9 @@ function display_boxes(){
 			attr3.value="dragForInput(event)";
 			sub_element.setAttributeNode(attr3);
 
-			array[1].appendChild(sub_element);
+			var listInsideBox=array[1].getElementsByTagName('ul')[0];
+			listInsideBox.appendChild(sub_element);
+			
 		}
 
 		flag_shortcuts==1;
@@ -98,7 +102,9 @@ function display_boxes(){
 			attr3.value="dragForInput(event)";
 			sub_element.setAttributeNode(attr3);
 
-			array[2].appendChild(sub_element);
+			var listInsideBox=array[2].getElementsByTagName('ul')[0];
+			listInsideBox.appendChild(sub_element);
+
 		}
 
 		flag_shortcuts==1;
@@ -209,7 +215,7 @@ function code_statements_handler(classType,format,id){
 	var marking_line=document.createElement("hr");
 	element.appendChild(marking_line);
 
-	element.style.border="double #00cc6a 0px 0px 2px 0px";
+	element.style.border="double #00cc6a 0px 0px 2px 0pxm";
 
 	var portion_right=document.getElementById("portion-right");
 	
