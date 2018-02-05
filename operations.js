@@ -352,7 +352,12 @@ function unload(id){
 		// main_element.appendChild(sub_element);
 
 		//NOW lets add it after the h5 tag
-		var title_main_element=main_element.getElementsByTagName('h5')[0];
+		console.log(main_element);
+		console.log("---------------------------------------------------------");
+		if(main_element.getAttribute('class').search('region')!=-1)
+			var title_main_element=main_element.getElementsByTagName('h5')[0];
+		else
+			var title_main_element=main_element.childNodes[0];
 		insertAfter(sub_element,title_main_element);
 
 	}
