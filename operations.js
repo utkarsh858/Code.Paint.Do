@@ -39,7 +39,7 @@ function display_boxes(){
 			sub_element.innerHTML= common_variable_names[i];
 
 			var attr=document.createAttribute("class");
-			attr.value="box_item";
+			attr.value="box-item";
 			sub_element.setAttributeNode(attr);
 
 			var attr2=document.createAttribute("draggable");
@@ -215,7 +215,7 @@ function code_statements_handler(classType,format,id){
 	var marking_line=document.createElement("hr");
 	element.appendChild(marking_line);
 
-	element.style.border="double #00cc6a 0px 0px 2px 0pxm";
+	element.style.border=" 0px 0px 2px 0px double #00cc6a";
 
 	var portion_right=document.getElementById("portion-right");
 	
