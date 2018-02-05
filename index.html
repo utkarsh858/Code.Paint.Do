@@ -103,8 +103,8 @@
 
 
 <div id="toolbar" class="toolbar" >
-	<img src="build.png" alt="Construct the code" width="20px" height="20px" onclick="build()"  tooltip="Construct the code!">
-	<img src="build.png" alt="Erase" width="20px" height="20px" onclick="erase()"  tooltip="Erase">
+	<button id="eraser-button" data-state="unselected" onclick="erase()">Eraser</button>
+	<button id="builder-button" data-state="selected" onclick="build()">Build it!</button>
 </div>
 </div>
 

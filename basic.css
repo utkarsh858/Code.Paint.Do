@@ -143,8 +143,7 @@ ul {
 	display: block;
 	position: absolute;
 	bottom: 0px;
-	background-color:#0000FF; 
-	height:20px;
+	height:40px;
 	width:100%;
 }
 
@@ -175,9 +174,9 @@ ul {
 }
 
 
-.box-item{
+.box-item , .shortcuts-items{
 	display: inline-block;
-	background-color: #E81123;
+	background-color: #E3008C;
 	color:white;
 	margin-top: 2px;
 	margin-bottom: 2px;
@@ -185,4 +184,34 @@ ul {
 	margin-right: 4px;
 	padding: 5px;
 	border-radius: 5px;
+}
+
+#eraser-button{
+	color: #647c64;
+	background-color: black;
+	height: 40px;
+	width:60px;
+}
+
+#eraser-button:hover{
+	background-color:  #647c64;
+	color: white;
+	height: 40px;
+	width:60px;
+
+}
+
+#builder-button{
+	background-color:black;
+	color:#107C10 ; 
+	height: 40px;
+	width:60px;
+
+}
+#builder-button:hover{
+	background-color:#107C10;
+	color: white; 
+	height: 40px;
+	width:60px;
+
 }
