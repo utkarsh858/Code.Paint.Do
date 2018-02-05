@@ -1,17 +1,18 @@
 h5 {
 	margin-top: 0px;
 	margin-bottom: 0px;
-
+	font-size: 32px;
 }
 
 h4 {
 	margin-top: 0px;
 	margin-bottom:0px;
+	font-size: 40px;
 }
-
+/*
 .region{
 	color:white;
-}
+}*/
 
 .portion{
 	height:100%;
@@ -113,7 +114,6 @@ ul {
 	padding-bottom: 0px;
 	padding-top:0px;
 	padding-left: 0px;
-	background-color: pink;
 	min-height: 20px;
 	border-top: 1px solid green;
 	border-bottom:1px dashed blue;

@@ -1,14 +1,14 @@
 var global_id=0;
 var color_array=[
-    'E81123',
-    '8764B8',
-    '00cc6a',
-    '00B7C3',
-    '498205',
-    'FFB900',
-    'C239B3',
-    '1073D6',
-    '724F2F',
+    '#E81123',
+    '#8764B8',
+    '#00cc6a',
+    '#00B7C3',
+    '#498205',
+    '#FFB900',
+    '#C239B3',
+    '#1073D6',
+    '#724F2F',
 ];
 var statements_info=[];
 var regions_info=[];

@@ -1,4 +1,6 @@
-
+function  getRandomColor(){
+	return color_array[Math.floor(Math.random() * color_array.length) ];
+}
 
 function erase(ev) {
 	// ev.target.remove();
@@ -332,26 +334,6 @@ function unload(id){
 	
 		if(attr.value=="variable-name") updateUsedVariables(attr2.value);
 
-		//  NONSENSE
-		// //mechanism to attach the property to h5 
-		// var temp= main_element.getElementsByTagName("h5");
-		
-		
-		// var check=false;
-		// var the_element_to_be_changed;
-
-		// for (var j = 0; j <= temp.length - 1 && !check; j++) {
-		// 	if(temp[j].class=attr.value) {check=true;the_element_to_be_changed=temp[j];}
-		// }
-		
-		// delete temp;
-
-		// if(check){
-		// 	the_element_to_be_changed.setAttribute("data-value",attr2.value);
-		// }else{
-		// 	main_element.appendChild(sub_element);
-		// }
-
 		//OLD METHOD FOR ADDING THE CHILD
 		// main_element.appendChild(sub_element);
 
@@ -386,14 +368,21 @@ function select(ev){
 	
 			if(element.getAttribute("class").search("selected")==-1)
 				{element.setAttribute("class",string+" selected");
-				element.style.background="blue";
+				element.style.background="#8E8CD8";
 				console.log(element.getAttribute("id"));
 				load(element.getAttribute("class"),element.getAttribute("data-format"),element.getAttribute("id"));
 			}
 			else{
+				var string=getRandomColor();
+                var a=string.substr(1,2);
+                var b=string.substr(3,4);
+                var c= string.substr(5,6);
+				 a= parseInt(a, 16);
+				 b= parseInt(b, 16);
+				 c= parseInt(c, 16);
 				element.setAttribute("class",string.replace(" selected",""));
 				if(element.getAttribute("class").search("code-statements")) element.style.background="";
-				if(element.getAttribute("class").search("code-regions")) element.style.background="pink";
+				if(element.getAttribute("class").search("code-regions")) element.style.background="linear-gradient(to right, rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",1))";
 				unload(element.getAttribute("id"));
 		}
 

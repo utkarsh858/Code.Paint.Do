@@ -87,7 +87,7 @@
 	<!-- middle	 -->
 		<ul type="none" class="cover-width cover-height" id="container" style="padding-left: 0px;">
 
-			<li class="code-statements" id="mamu" data-format="none">Let us code!</li>
+			<li class="code-statements" id="mamu" data-format="none"><h5>Let us code!</h5></li>
 
 
 		</ul>
@@ -136,8 +136,12 @@
 			attr.value="drag(event)";
 			var attr2=document.createAttribute("draggable");
 			attr2.value="true";
+			// var attr3=regions[i].getAttribute("color");
+			// attr3.value=getRandomColor();
+			regions[i].style.color=getRandomColor();
 			regions[i].setAttributeNode(attr);
 			regions[i].setAttributeNode(attr2);
+			// regions[i].setAttributeNode(attr3);
 
 			var child=regions[i].childNodes[1];
 			console.log(child);

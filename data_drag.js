@@ -44,6 +44,15 @@ function prepare_codestatement(ev){
     }
     else {
     dragged_element.setAttribute("class",dragged_element.getAttribute("class").replace("region","code-region"));
+                var string=getRandomColor();
+                var a=string.substr(1,2);
+                var b=string.substr(3,4);
+                var c= string.substr(5,6);
+                 a= parseInt(a, 16);
+                 b= parseInt(b, 16);
+                 c= parseInt(c, 16);
+
+                 dragged_element.style.background="linear-gradient(to right, rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",0.4))";
 
 
     var onclick_attr=document.createAttribute("onclick");
