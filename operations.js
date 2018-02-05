@@ -209,6 +209,8 @@ function code_statements_handler(classType,format,id){
 	var marking_line=document.createElement("hr");
 	element.appendChild(marking_line);
 
+	element.style.border="double #00cc6a 0px 0px 2px 0px";
+
 	var portion_right=document.getElementById("portion-right");
 	
 	portion_right.appendChild(element);
