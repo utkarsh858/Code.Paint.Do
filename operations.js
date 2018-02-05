@@ -4,6 +4,17 @@ function  getRandomColor(){
 
 function erase(ev) {
 	// ev.target.remove();
+	if(flag_erase==0)
+		{var element=document.getElementById('eraser-button');
+		element.style.background="white";
+		element.style.color="black";
+
+	}
+	else{
+		var element=document.getElementById('eraser-button');
+		element.style.background="black";
+		element.style.color="#647c64"
+		}
 	flag_erase=(flag_erase+1)%2;
 }
 
