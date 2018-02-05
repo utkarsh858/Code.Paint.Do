@@ -360,8 +360,13 @@ function select(ev){
 	if(flag_erase==0){
 
     	ev.stopPropagation();
-    	var element=document.getElementById(ev.target.id);
+    	var element;
+    	if(ev.target.className.search('region-heading')!=-1 )
+    		element=ev.target.parentElement;
+    	else
+    		element=document.getElementById(ev.target.id);
     	
+
     	var string=element.getAttribute("class");
     	// string=string+" selected";
     	
