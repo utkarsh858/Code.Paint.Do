@@ -330,13 +330,18 @@ function unload(id){
 	var temptemparray=main_element.getElementsByTagName('h6');
 	var temparray=[];
 
+	if(main_element.className.search('region')!=-1){
+		main_element=main_element.getElementsByTagName('li')[0];
+	}
+
 
 	//  ONLY IMMEDIATE H6 MEMBERS ARE REQUIRED
 	for (var i = temptemparray.length - 1; i >= 0; i--) {
 		if(temptemparray[i].parentNode.id==main_element.id)
 			temparray.push(temptemparray[i]);
 	}
-
+	console.log(temparray);
+	console.log(main_element);
 	for (var i = temparray.length - 1; i >= 0; i--) {
 		temparray[i].parentNode.removeChild(temparray[i]);
 	}
@@ -387,17 +392,17 @@ function load(classType,format,id){
 function select(ev){
 
 	if(flag_erase==0){
-
+		console.log(ev.target);
     	ev.stopPropagation();
     	var element;
     	if(ev.target.className.search('region-heading')!=-1 )
-    		element=ev.target.parentElement;
+    		element=ev.target.parentElement.parentElement;
     	else if(ev.target.className.search('code-statements')!=-1)
     		element=document.getElementById(ev.target.id);
     	else
     		element=document.getElementById(ev.target.id);
     	
-    	
+    	console.log(element);
     	var string=element.getAttribute("class");
 	
 			if(element.getAttribute("class").search("selected")==-1)
@@ -414,10 +419,11 @@ function select(ev){
 				 a= parseInt(a, 16);
 				 b= parseInt(b, 16);
 				 c= parseInt(c, 16);
+				 console.log(element.className);
 				element.setAttribute("class",element.className.replace(" selected",""));
 				if(element.getAttribute("class").search("code-statements")!=-1) 
 					{element.style.background="none";}
-				if(element.getAttribute("class").search("code-regions")!=-1) 
+				if(element.getAttribute("class").search("code-region")!=-1) 
 					{element.style.background="linear-gradient(to right,\
 					 rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",1))";
 					}
