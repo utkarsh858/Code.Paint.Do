@@ -92,5 +92,5 @@ function build() {
 	}
 
 
-	document.querySelector('.done').style.display="block";
+	document.getElementById('done').style.display="block";
 }

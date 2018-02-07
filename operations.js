@@ -42,7 +42,7 @@ function insertAfter(newNode, referenceNode) {
 
 function updateUsedVariables(string){
 	var i;
-	if(( i=used_keywords.indexOf(string))>-1){
+	if( i=used_keywords.indexOf(string)>-1){
 		
 		used_keywords.splice(i,1);
 		
@@ -109,11 +109,11 @@ function display_boxes(){
 		flag_shortcuts==1;
 	}
 
-	if(flag_numberdumber==0){
 
-		for (var i = 0; i < used_keywords.length; i++) {
+	if(flag_common_numberdumber==0){
+		for (var i = 0; i < reserved_keywords.length; i++) {
 			var sub_element= document.createElement("li");	
-			sub_element.innerHTML= used_keywords[i];
+			sub_element.innerHTML= reserved_keywords[i];
 
 			var attr=document.createAttribute("class");
 			attr.value="used-keywords-items";
@@ -131,9 +131,10 @@ function display_boxes(){
 			listInsideBox.appendChild(sub_element);
 
 		}
-
-		flag_shortcuts==1;
+	flag_common_variables=1;
 	}
+
+
 
 	// manifest all blue bloxes
 	for (var i = 0; i < array.length; i++) {
