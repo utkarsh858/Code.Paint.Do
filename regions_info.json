@@ -14,9 +14,9 @@
 	"forloop":{
 		"display":"Field 1",
 		"input":["variable-declaration","text"],
-		"display":"Field 2",
+		"display1":"Field 2",
 		"input":["expression","text"],
-		"display":"Field 3",
+		"display2":"Field 3",
 		"input":["expression","text"]
 
 	},
