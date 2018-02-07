@@ -91,11 +91,16 @@ function allowDrop(ev){
 
 function drop_for_regionHeading(ev){
     ev.stopPropagation();
+    var dragged_element=prepare_codestatement(ev);
+    ev.target.parentNode.insertBefore(dragged_element,ev.target.nextSibling);
 
 }
 
 function drop_for_regionDescriptions(ev){
     ev.stopPropagation();
+    var dragged_element=prepare_codestatement(ev);
+    ev.target.parentNode.insertBefore(dragged_element,ev.target.nextSibling);
+
 }
 
 function dropForInput(ev){
