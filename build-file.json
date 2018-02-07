@@ -67,7 +67,7 @@
 			"string":"%2$s %1$s("
 		},
 		"close":{
-			"string":"}\n"m
+			"string":"}\n"
 		}
 	},
 	"class":{

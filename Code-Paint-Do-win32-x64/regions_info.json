@@ -1,0 +1,39 @@
+{
+	"function":{
+		"display":"Function name",
+		"input":["function-name","text"],
+		"display1":"Return type",
+		"input1":["return-type","text"]
+
+
+	},
+	"class":{
+		"display":"Class name",
+		"input":["variable-name","text"]
+	},
+	"forloop":{
+		"display":"Field 1",
+		"input":["variable-declaration","text"],
+		"display1":"Field 2",
+		"input2":["expression","text"],
+		"display2":"Field 3",
+		"input3":["expression","text"]
+
+	},
+	"main":{
+
+	},
+	"if":{
+		"display":"Condition",
+		"input":["expression","text"]
+	},
+	"else":{},
+	"switch":{
+		"display":"variable name is",
+		"input":["variable-name","text"]
+	},
+	"case":{
+		"display":"variable value",
+		"input":["variable-value","text"]
+	}
+}

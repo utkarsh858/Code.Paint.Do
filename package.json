@@ -1,5 +1,5 @@
 {
-  "name": "MyCodePainter",
+  "name": "Code-Paint-Do",
   "version": "0.1.0",
   "main": "main.js",
   "description": "Drag n Drop coder",
@@ -40,7 +40,7 @@
     },
     "win": {
       "target": "NSIS",
-      "icon": "build/icon.ico"
+      "icon": "app.png"
     }
   },
   "devDependencies": {

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Code.Paint.Do</title>
+	<link rel="stylesheet" type="text/css" href="basic.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<script type="text/javascript" src="file_reader.js"></script>
+	<script type="text/javascript" src="builder.js"></script>
+	<script type="text/javascript" src="data_variables.js"></script>
+	<script type="text/javascript" src="operations.js"></script>
+	<script type="text/javascript" src="data_drag.js">
+		
+	</script>
+</head>
+<body style="height: 100%" onclick="hide_boxes(event)" ontouchend="hide_boxes(event)">
+
+<!-- absolutely no need -->
+<!-- <script type="text/javascript">var onDropId="default_adder";</script> -->
+
+<div class="left portion border-basic unselectable ">
+	<div class="segment upper border-basic titlebar">
+		<!-- Statements -->
+		<ul type="none" class="cover-width cover-height">
+			<li draggable=true class="statements" id="s1" data-format="declare" >Declare a variable</li>
+			<li draggable=true class="statements" id="s2" data-format="print">Print</li>
+			<li draggable=true class="statements" id="s3" data-format="input">Input</li>
+			<li draggable=true class="statements" id="s4" data-format="expression">Expression/Assignment</li>
+			<li draggable=true class="statements" id="s5" data-format="include">Include</li>
+			<li draggable=true class="statements" id="s6" data-format="null">Null</li>
+			<li draggable=true class="statements" id="s7" data-format="continue">Continue</li>
+			<li draggable=true class="statements" id="s8" data-format="break">Break</li>
+			<li draggable=true class="statements" id="s9" data-format="memset">Memory set</li>
+			<li draggable=true class="statements" id="s10" data-format="return">Return</li>
+			<li draggable=true class="statements" id="s11" data-format="memcpy">Memory copy</li>
+			<li draggable=true class="statements" id="s12" data-format="private">Private</li>
+			<li draggable=true class="statements" id="s13" data-format="public">Public</li>
+			<li draggable=true class="statements" id="s14" data-format="field">Field</li>
+			<li draggable=true class="statements" id="s15" data-format=".">Dot</li>
+			<li draggable=true class="statements" id="s16" data-format=";">Semi-Colon</li>
+			<li draggable=true class="statements" id="s17" data-format="argument">Argument</li>
+			<li draggable=true class="statements" id="s18" data-format="argument_end">Argument_end</li>
+		</ul>
+
+
+	</div>
+	<div class="segment border-basic ">
+		<!-- Regions -->
+		<ul type="none" class="cover-width cover-height" >
+
+
+
+		<ul type="none" class="cover-width region" id="r1" data-format="function">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">Function</h5></li>
+		</ul>
+		<ul type="none" class="cover-width region" id="r2" data-format="class">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">Class</h5></li>
+		</ul>
+		<ul type="none" class="cover-width region" id="r3" data-format="forloop">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">For loop</h5></li>
+		</ul>
+
+		<ul type="none" class="cover-width region" id="r4" data-format="main">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">Main</h5></li>
+		</ul>
+		<ul type="none" class="cover-width region" id="r5" data-format="if">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">If {}</h5></li>
+		</ul>
+		<ul type="none" class="cover-width region" id="r6" data-format="else">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">Else {}</h5></li>
+		</ul>
+		<ul type="none" class="cover-width region" id="r7" data-format="switch">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">Switch</h5></li>
+		</ul>
+		<ul type="none" class="cover-width region" id="r9" data-format="case">
+		<li class="" ondrop="drop_for_regionHeading(event)"><h5 class="region-heading">Case</h5></li>
+		</ul>
+		
+
+
+
+		</ul>
+
+	</div>
+</div>
+<div id="center-portion" class="center-portion border-basic left unselectable" ondragover="allowDrop(event)"  ondrop="drop(event)">
+	<!-- middle	 -->
+		<ul type="none"  class="cover-width cover-height" id="container" style="padding-left: 0px;">
+
+			<li class="code-statements" ondrop="drop_for_statements(event)" id="mamu" data-format="none" ><h5 class="unselectable">Let us code!</h5></li>
+
+
+		</ul>
+
+
+</div>
+
+
+<div class="left portion border-basic relative" id="portion-right">
+<!-- right -->
+<h4>Properties</h4>
+
+
+
+<div id="toolbar" class="toolbar" >
+	<button id="eraser-button" data-state="unselected" onclick="erase()" ontouchend="erase()">Eraser</button>
+	<button id="builder-button" data-state="selected" onclick="build()" ontouchend="build()">Build it!</button>
+</div>
+
+</div>
+<div id="credits" style="font-size: 3px">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div id="recommender" class="focus-window"><ul class="box-list" type="none"></ul></div>
+<div id="shortcuts" class="focus-window"><ul class="box-list" type="none"></ul></div>
+<div id="numberdumber" class="focus-window"><ul class="box-list" type="none"></ul></div>
+ 
+
+
+<script type="text/javascript">
+	var ids=document.getElementsByTagName('li');
+	for (var i = ids.length - 1; i >= 0; i--) {
+		if(ids[i].getAttribute("class").search("statements")!=-1)
+		{
+			var attr=document.createAttribute("ondragstart");
+			attr.value="drag(event)";
+			ids[i].setAttributeNode(attr);
+		}
+
+
+	}
+
+	var regions=document.getElementsByTagName('ul');
+	for (var i = regions.length - 1; i >= 0; i--) {
+		if(regions[i].getAttribute("class").search("region")!=-1)
+		{
+			var attr=document.createAttribute("ondragstart");
+			attr.value="drag(event)";
+			var attr2=document.createAttribute("draggable");
+			attr2.value="true";
+			// var attr3=regions[i].getAttribute("color");
+			// attr3.value=getRandomColor();
+			regions[i].style.color=getRandomColor();
+			regions[i].setAttributeNode(attr);
+			regions[i].setAttributeNode(attr2);
+			// regions[i].setAttributeNode(attr3);
+
+			var child=regions[i].childNodes[1];
+			console.log(child);
+			var attr3=document.createAttribute("id");
+			attr3.value="rl"+i;
+			child.setAttributeNode(attr3);
+
+			child.setAttribute("class","width height");
+		}
+
+	}
+</script>
+<script type="text/javascript" src="event_listeners.js"></script>
+</body>
+</html>

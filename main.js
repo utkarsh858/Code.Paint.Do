@@ -9,7 +9,10 @@ function createWindow(){
 		height : 900,
 		frame: true,
 		toolbar: false,
-		icon: path.join(__dirname, 'app.png')
+		icon: path.join(__dirname, 'app.png'),
+		webPreferences: {
+		devTools: false
+		}
 
 	})
 

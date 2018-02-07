@@ -1,0 +1,51 @@
+{
+  "name": "Code-Paint-Do",
+  "version": "0.1.0",
+  "main": "main.js",
+  "description": "Drag n Drop coder",
+  "author": "utkarsh858 utkarsh858iitr@outlook.com",
+  "scripts": {
+    "postinstall": "npm install",
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "dependencies": {
+    "sprintf-js": "^1.1.1",
+    "path": "latest",
+    "url": "latest"
+  },
+  "build": {
+    "appId": "guicoder",
+    "category": "application.development",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "app.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest",
+    "electron-packager": "^10.1.2"
+  }
+}

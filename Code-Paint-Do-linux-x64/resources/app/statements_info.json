@@ -1,0 +1,76 @@
+{
+	"declare":{
+		"display":"The variable name is ",
+		"input":["variable-name","text"],
+		"display1":"The type of variable is ",
+		"input1":["variable-type","text"]
+	},
+	"expression":{
+		"display":"Variable name is",
+		"input":["variable-name-used","text"],
+		"display1":"Variable value is",
+		"input1":["variable-value","text"]
+	},
+	"print":{
+		"display":"What should I print?",
+		"input":["variable-name-used","text"]
+	},
+	"input":{
+		"display":"Variable name is",
+		"input":["variable-name-used","text"]
+	},
+	"include":{
+		"display":"Package//File name",
+		"input":["package-name","text"]
+	},
+	"null":{},
+	"continue":{},
+	"break":{},
+	"memset":{
+		"display":"void* destination",
+		"input":["variable-name","text"],
+		"display1":"int character",
+		"input1":["variable-name","text"],
+		"display2":"size_t number",
+		"input2":["variable-name","text"]
+
+	},
+	"return":{
+		"display":"Return this",
+		"input":["variable-name-used","text"]
+	},
+	"memcpy":{
+		"display":"void* destination",
+		"input":["variable-name","text"],
+		"display1":"const void* character",
+		"input1":["variable-name","text"],
+		"display2":"size_t number",
+		"input2":["variable-name","text"]
+
+	},
+	"private":{},
+	"public":{},
+	"field":{
+		"display":"Variable, Object anything....",
+		"input":["variable-name","text"]
+	},
+	".":{},
+	";":{},
+	"argument":{
+		"display":"Argument name is..",
+		"input":["variable-name","text"],
+		"display1":"Argument type is...",
+		"input1":["variable-type","text"],
+		"display2":"Default value is...",
+		"input3":["variable-value","text"]
+	},
+	"argument_end":{
+		"display":"Argument name is..",
+		"input":["variable-name","text"],
+		"display1":"Argument type is...",
+		"input1":["variable-type","text"],
+		"display2":"Default value is...",
+		"input2":["variable-value","text"]
+	}
+
+}

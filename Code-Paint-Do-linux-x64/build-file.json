@@ -1,0 +1,131 @@
+{
+	"declare":{
+		"string":"%1$s %2$s ;\n"
+	},
+	"input":{
+		"string":"std::cin >> %1$s;\n"
+	},
+	"expression":{
+		"string":"%1$s = %2$s ;\n"
+	},
+	"print":{
+		"string":"std::cout << %1$s ;\n"
+	},
+	"include":{
+		"string":"#include <%1$s>;\n"
+	},
+	"null":{
+		"string":"if(10<20){};\n"
+	},
+	"continue":{
+		"string":"continue;\n"
+	},
+	"break":{
+		"string":"break;\n"
+	},
+	"memset":{
+		"string":"memset(%1$s,%2$s,%3$s);\n"
+	},
+	"memcpy":{
+		"string":"memcpy(%1$s,%2$s,%3$s);\n"
+	},
+	"private":{
+		"string":"private :\n"
+	},
+	"public":{
+		"string":"public :\n"
+	},
+	"field":{
+		"string":"%1$s"
+	},
+	".":{
+		"string":"."
+	},
+	";":{
+		"string":";"
+	},
+	"none":{
+		"string":""
+	},
+	"return":{
+		"string":"return %1$s;\n"
+	},
+	"argument":{
+		"string":"%2$s %1$s =%3$s ,"
+	},
+	"argument_end":{
+		"string":"%2$s %1$s =%3$s){\n"
+	},
+
+
+
+
+
+
+	"function":{
+		"open":{
+			"string":"%2$s %1$s("
+		},
+		"close":{
+			"string":"}\n"m
+		}
+	},
+	"class":{
+		"open":{
+			"string":"Class %1$s {\n"
+		},
+		"close":{
+			"string":"};\n"
+		}
+	},
+	"forloop":{
+		"open":{
+			"string":"for(%1$s,%2$s,%3$s){\n"
+		},
+		"close":{
+			"string":"}\n"
+		}
+	},
+	"main":{
+		"open":{
+			"string":"int main(int argc, char const *argv[]){\n"
+		},
+		"close":{
+			"string":"return 0; \n}\n"
+		}
+	},
+	"if":{
+		"open":{
+			"string":"if(%1$s){\n"
+		},
+		"close":{
+			"string":"}\n"
+		}
+	},
+	"else":{
+		"open":{
+			"string":"else{\n"
+		},
+		"close":{
+			"string":"}\n"
+		}
+	},
+	"switch":{
+		"open":{
+			"string":"switch(%1$s){\n"
+		},
+		"close":{
+			"string":"}\n"
+		}
+	},
+	"case":{
+		"open":{
+			"string":"case %1$s :\n"
+		},
+		"close":{
+			"string":""
+		}
+	}
+	
+
+}
