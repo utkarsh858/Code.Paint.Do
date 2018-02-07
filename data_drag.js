@@ -110,3 +110,8 @@ function dropForInput(ev){
     var data = ev.dataTransfer.getData("text");
     ev.target.setAttribute("value",ev.target.value+data);
 }
+
+function nothing(ev) {
+    // do nothing
+    ev.stopPropagation();
+}
