@@ -15,9 +15,9 @@
 		"display":"Field 1",
 		"input":["variable-declaration","text"],
 		"display1":"Field 2",
-		"input":["expression","text"],
+		"input2":["expression","text"],
 		"display2":"Field 3",
-		"input":["expression","text"]
+		"input3":["expression","text"]
 
 	},
 	"main":{
