@@ -56,7 +56,7 @@ function prepare_codestatement(ev){
                  b= parseInt(b, 16);
                  c= parseInt(c, 16);
 
-                 dragged_element.style.background="linear-gradient(to right, rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",0.4))";
+                 dragged_element.style.background="linear-gradient(to right, rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",0.2))";
 
 
     var onclick_attr=document.createAttribute("onclick");

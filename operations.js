@@ -3,10 +3,15 @@ function  getRandomColor(){
 }
 
 function convert_to_printable(s){
-	console.log(typeof s);
 	for (var i in char_to_code) {
-		console.log(char_to_code[i]+" "+i);
-		s.replace(i+"",char_to_code[i]);
+		s=s.replace(i+"",char_to_code[i]+"");
+	}
+	return s;
+}
+
+function convert_to_original(s){
+	for (var i in char_to_code) {
+		s=s.replace(char_to_code[i]+"",i+"");
 	}
 	return s;
 }
@@ -218,7 +223,7 @@ function code_statements_handler(classType,format,id){
 		for (var i = 0; i < children.length; i++) {
 			if(children[i].getAttribute("class")==value[0]){
 				var sub_attr=document.createAttribute("value");
-				sub_attr.value= children[i].getAttribute("data-value");
+				sub_attr.value= convert_to_original(children[i].getAttribute("data-value"));
 				sub_element.setAttributeNode(sub_attr);
 				}
 			
@@ -304,7 +309,7 @@ function code_region_handler(classType,format,id){
 		for (var i = 0; i < children.length; i++) {
 			if(children[i].getAttribute("class")==value[0]){
 				var sub_attr=document.createAttribute("value");
-				sub_attr.value= children[i].getAttribute("data-value");
+				sub_attr.value= convert_to_original(children[i].getAttribute("data-value"));
 				sub_element.setAttributeNode(sub_attr);
 				}
 			
@@ -359,7 +364,7 @@ function unload(id){
 		var attr=document.createAttribute("class");
 		attr.value=array_inputs[i].getAttribute("class");
 		var attr2=document.createAttribute("data-value");
-		attr2.value=array_inputs[i].value;
+		attr2.value=convert_to_printable(array_inputs[i].value);
 
 		var attr3=document.createAttribute("ondrop");
 		attr3.value="drop_for_regionDescriptions(event)";
@@ -440,7 +445,7 @@ function select(ev){
 					{element.style.background="none";}
 				if(element.getAttribute("class").search("code-region")!=-1) 
 					{element.style.background="linear-gradient(to right,\
-					 rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",1))";
+					 rgba("+a+","+b+","+c+",0), rgba("+a+","+b+","+c+",0.2))";
 					}
 				unload(element.getAttribute("id"));
 		}

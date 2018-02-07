@@ -11,7 +11,7 @@ function createWindow(){
 		toolbar: false,
 		icon: path.join(__dirname, 'app.png'),
 		webPreferences: {
-		devTools: false
+		devTools: true
 		}
 
 	})
@@ -43,4 +43,5 @@ app.on('activate',()=>{
 		createWindow()
 	}
 })
+
 

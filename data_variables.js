@@ -124,10 +124,10 @@ var shortcuts_symbols=[
     ];
 
 var char_to_code={
+    '&':"&amp;",
     ' ':"&nbsp;",
     '<':"&lt;",
     '>':"&gt;",
-    '&':"&amp;",
     '"':"&quot;",
     "'":"&apos;"
 };
