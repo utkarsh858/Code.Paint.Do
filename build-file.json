@@ -51,10 +51,10 @@
 		"string":"return %1$s;\n"
 	},
 	"argument":{
-		"string":"%2$s %3$s =%1$s ,"
+		"string":"%2$s %1$s =%3$s ,"
 	},
 	"argument_end":{
-		"string":"%2$s %3$s =%1$s){\n"
+		"string":"%2$s %1$s =%3$s){\n"
 	},
 
 
@@ -67,7 +67,7 @@
 			"string":"%2$s %1$s("
 		},
 		"close":{
-			"string":"}\n"
+			"string":"}\n"m
 		}
 	},
 	"class":{

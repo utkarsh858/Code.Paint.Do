@@ -342,15 +342,14 @@ function unload(id){
 	if(main_element.className.search('region')!=-1){
 		main_element=main_element.getElementsByTagName('li')[0];
 	}
-
+	console.log(main_element);
 
 	//  ONLY IMMEDIATE H6 MEMBERS ARE REQUIRED
 	for (var i = temptemparray.length - 1; i >= 0; i--) {
 		if(temptemparray[i].parentNode.id==main_element.id)
 			temparray.push(temptemparray[i]);
 	}
-	console.log(temparray);
-	console.log(main_element);
+
 	for (var i = temparray.length - 1; i >= 0; i--) {
 		temparray[i].parentNode.removeChild(temparray[i]);
 	}
@@ -373,15 +372,22 @@ function unload(id){
 	
 		if(attr.value=="variable-name") updateUsedVariables(attr2.value);
 
-		//OLD METHOD FOR ADDING THE CHILD
-		// main_element.appendChild(sub_element);
+		var title_main_element;
+		//NOW lets add it after the h5 tag or after h6 tag if it is present
+				console.log('1');
+			if(main_element.getElementsByTagName('h6').length==0)
+				if(main_element.getAttribute('class').search('statement')!=-1)
+					title_main_element=main_element.childNodes[0];
+				else
+					title_main_element=main_element.getElementsByTagName('h5')[0];
+			else
+				{
+				console.log('8');
 
-		//NOW lets add it after the h5 tag
-
-		if(main_element.getAttribute('class').search('region')!=-1)
-			var title_main_element=main_element.getElementsByTagName('h5')[0];
-		else
-			var title_main_element=main_element.childNodes[0];
+				var array=main_element.getElementsByTagName('h6');
+				title_main_element=array[array.length-1];
+				}
+		
 		insertAfter(sub_element,title_main_element);
 
 	}
