@@ -110,7 +110,7 @@ function display_boxes(){
 	}
 
 
-	if(flag_common_numberdumber==0){
+	if(flag_numberdumber==0){
 		for (var i = 0; i < reserved_keywords.length; i++) {
 			var sub_element= document.createElement("li");	
 			sub_element.innerHTML= reserved_keywords[i];
@@ -131,7 +131,7 @@ function display_boxes(){
 			listInsideBox.appendChild(sub_element);
 
 		}
-	flag_common_variables=1;
+	flag_numberdumber=1;
 	}
 
 

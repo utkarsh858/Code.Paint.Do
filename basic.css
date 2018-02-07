@@ -177,7 +177,7 @@ ul {
 }
 
 
-.box-item , .shortcuts-items{
+.box-item , .shortcuts-items, .used-keywords-items{
 	display: inline-block;
 	background-color: #E3008C;
 	color:white;
