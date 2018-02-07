@@ -1,6 +1,6 @@
 h5 {
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	font-size: 32px;
 }
 
@@ -130,6 +130,7 @@ ul {
 	min-height: 20px;
 	border-top: 1px solid black;
 	border-bottom:3px double #498205;
+	margin-bottom: 3px;
 }
 
 .unselectable {

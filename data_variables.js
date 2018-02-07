@@ -122,3 +122,12 @@ var shortcuts_symbols=[
     'sizeof','true',
     'false'
     ];
+
+var char_to_code={
+    ' ':"&nbsp;",
+    '<':"&lt;",
+    '>':"&gt;",
+    '&':"&amp;",
+    '"':"&quot;",
+    "'":"&apos;"
+};

@@ -2,6 +2,15 @@ function  getRandomColor(){
 	return color_array[Math.floor(Math.random() * color_array.length) ];
 }
 
+function convert_to_printable(s){
+	console.log(typeof s);
+	for (var i in char_to_code) {
+		console.log(char_to_code[i]+" "+i);
+		s.replace(i+"",char_to_code[i]);
+	}
+	return s;
+}
+
 function erase(ev) {
 	// ev.target.remove();
 	if(flag_erase==0)
